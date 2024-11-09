@@ -23,7 +23,7 @@ stages:
   #--------------------------------------------#
   # BUILD STAGE
   #--------------------------------------------#
-  - stage: Build
+  - stage: Infrastructure
     jobs:
       - job: BuildInfrastructure
         steps:
@@ -80,12 +80,55 @@ stages:
               workingDirectory: "$(System.DefaultWorkingDirectory)/terraform/environments/test"
               environmentServiceNameAzureRM: "$(azureServiceConnectionId)"
 
-        # ToDo: Change the workingDirectory path, as applicable to you
-        # Destroy the resources in Azure by running a separate pipeline.
-        # - task: TerraformTaskV3@3
-        #   displayName: Terraform destroy
-        #   inputs:
-        #     provider: 'azurerm'
-        #     command: 'destroy'
-        #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
-        #     environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
+          # ToDo: Change the workingDirectory path, as applicable to you
+          # Destroy the resources in Azure by running a separate pipeline.
+          # - task: TerraformTaskV3@3
+          #   displayName: Terraform destroy
+          #   inputs:
+          #     provider: 'azurerm'
+          #     command: 'destroy'
+          #     workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
+          #     environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
+          #--------------------------------------------#
+
+  - stage: Build
+    dependsOn: Infrastructure
+    jobs:
+      - job: Archive_fakerestapi_web_package
+        steps:
+          # Archive the web package
+          - task: ArchiveFiles@2
+            displayName: "Archive fakerestapi web package"
+            inputs:
+              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/fakerestapi"
+              includeRootFolder: false
+              archiveType: "zip"
+              archiveFile: "$(Build.ArtifactStagingDirectory)/webapp-$(Build.BuildId)"
+              replaceExistingArchive: true
+
+          # Publish the archived package as an artifact
+          - task: PublishBuildArtifacts@1
+            displayName: "Publish Artifact: webapp"
+            inputs:
+              PathtoPublish: "$(Build.ArtifactStagingDirectory)/webapp-$(Build.BuildId).zip"
+              ArtifactName: "webapp-$(Build.BuildId)"
+  - stage: Deploy
+    dependsOn: Build
+    jobs:
+      - job: DeployWebAppToAzure
+        steps:
+          # Download the published artifact
+          - task: DownloadPipelineArtifact@2
+            displayName: "Download webapp artifact"
+            inputs:
+              artifact: "webapp-$(Build.BuildId)"
+
+              # Deploy the archived package to Azure Web App
+          - task: AzureWebApp@1
+            displayName: "Deploy to Azure Web App"
+            inputs:
+              azureSubscription: "$(azureServiceConnectionId)"
+              appType: "webApp"
+              appName: "myApplication-AppService"
+              package: "$(Pipeline.Workspace)/webapp-$(Build.BuildId).zip"
+              deployToSlotOrASE: false
