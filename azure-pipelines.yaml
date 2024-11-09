@@ -149,13 +149,13 @@ stages:
           - script: |
               mkdir -p html-report/stress-test
               apache-jmeter-5.6.2/bin/jmeter -n -t StressTest.jmx -l simple-result-stress-test.csv -e -o html-report/stress-test
-            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite"
+            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter"
             displayName: "Execute JMeter Test Stress Test"
 
           - script: |
               mkdir -p html-report/endurance-test
               apache-jmeter-5.6.2/bin/jmeter -n -t EnduranceTest.jmx -l simple-result-endurance-test.csv -e -o html-report/endurance-test
-            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite"
+            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter"
             displayName: "Execute JMeter Test Endurance Test"
 
           - task: ArchiveFiles@2
