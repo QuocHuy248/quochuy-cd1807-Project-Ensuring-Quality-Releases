@@ -15,9 +15,9 @@ terraform {
 }
 
 module "resource_group" {
-  source              = "../../modules/resource_group"
-  location            = var.location             
-  resource_group = var.resource_group
+  source               = "../../modules/resource_group"
+  resource_group       = var.resource_group
+  location             = var.location
 }
 module "network" {
   source               = "../../modules/network"
@@ -55,3 +55,4 @@ module "publicip" {
   resource_type    = "publicip"
   resource_group   = module.resource_group.resource_group_name
 }
+

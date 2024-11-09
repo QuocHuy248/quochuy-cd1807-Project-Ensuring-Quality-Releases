@@ -7,7 +7,7 @@ access_key = "RsdJmhfeWpG7mWVOGVJsmkG/H9zEfzpKPOv3870H86xTma3s8A9uWUF+4r+eL5q7AR
 
 # Resource Group/Location
 location = "West Europe"
-resource_group = "Azuredevops"
+resource_group_name = "Azuredevops"
 application_type = "myApplication"
 
 # Network
