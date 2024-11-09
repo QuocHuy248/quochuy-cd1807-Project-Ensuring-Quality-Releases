@@ -132,3 +132,40 @@ stages:
               appName: "myApplication-AppService"
               package: "$(Pipeline.Workspace)/webapp-$(Build.BuildId).zip"
               deployToSlotOrASE: false
+  - stage: Testing
+    dependsOn: Deploy
+    condition: succeeded()
+    jobs:
+      - job: JMeterTest
+        displayName: Performance testing by JMeter
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - script: |
+              wget https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.6.2.tgz
+              tar -xzvf apache-jmeter-5.6.2.tgz
+            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite"
+            displayName: "Install JMeter"
+          - script: |
+              mkdir -p html-report/stress-test
+              apache-jmeter-5.6.2/bin/jmeter -n -t StressTest.jmx -l simple-result-stress-test.csv -e -o html-report/stress-test
+            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite"
+            displayName: "Execute JMeter Test Stress Test"
+
+          - script: |
+              mkdir -p html-report/endurance-test
+              apache-jmeter-5.6.2/bin/jmeter -n -t EnduranceTest.jmx -l simple-result-endurance-test.csv -e -o html-report/endurance-test
+            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite"
+            displayName: "Execute JMeter Test Endurance Test"
+
+          - task: ArchiveFiles@2
+            displayName: "Archive PerformanceTestSuite"
+            inputs:
+              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite/html-report"
+              includeRootFolder: false
+              archiveType: "zip"
+              archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
+          # JMeter Test Suite - Publish
+          - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
+            displayName: "Upload Performance Test Result"
+            artifact: "webapp-$(Build.BuildId)"
