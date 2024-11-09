@@ -1,0 +1,40 @@
+id,title,dueDate,completed
+1,Activity 1,"2024-08-26T13:33:32.376328",true
+2,Activity 2,"2024-09-03T13:33:32.376362",true
+3,Activity 3,"2024-09-12T13:33:32.376370",true
+4,Activity 4,"2024-09-17T13:33:32.376375",false
+5,Activity 5,"2024-09-08T13:33:32.376382",false
+6,Activity 6,"2024-08-25T13:33:32.376388",true
+7,Activity 7,"2024-08-29T13:33:32.376393",false
+8,Activity 8,"2024-08-25T13:33:32.376400",false
+9,Activity 9,"2024-09-01T13:33:32.376412",true
+10,Activity 10,"2024-09-09T13:33:32.376419",true
+11,Activity 11,"2024-08-31T13:33:32.376425",true
+12,Activity 12,"2024-08-28T13:33:32.376439",false
+13,Activity 13,"2024-09-05T13:33:32.376447",false
+14,Activity 14,"2024-09-15T13:33:32.376455",false
+15,Activity 15,"2024-09-03T13:33:32.376462",false
+16,Activity 16,"2024-08-27T13:33:32.376470",false
+17,Activity 17,"2024-09-16T13:33:32.376477",true
+18,Activity 18,"2024-08-24T13:33:32.376485",true
+19,Activity 19,"2024-09-07T13:33:32.376493",true
+20,Activity 20,"2024-09-03T13:33:32.376497",false
+21,Activity 21,"2024-09-06T13:33:32.376502",true
+22,Activity 22,"2024-08-20T13:33:32.376506",true
+23,Activity 23,"2024-09-03T13:33:32.376512",true
+24,Activity 24,"2024-08-22T13:33:32.376521",false
+25,Activity 25,"2024-09-15T13:33:32.376528",false
+26,Activity 26,"2024-09-13T13:33:32.376542",false
+27,Activity 27,"2024-09-02T13:33:32.376546",true
+28,Activity 28,"2024-08-31T13:33:32.376550",true
+29,Activity 29,"2024-09-10T13:33:32.376554",true
+30,Activity 30,"2024-09-18T13:33:32.376559",true1731175147579,581,GET Retrieve All Activities,200,OK,Stress Test 1-2,text,true,,3109,190,2,2,https://myapplication-appservice.azurewebsites.net/api/Activities,581,0,383
+1731175147579,747,GET Retrieve All Activities,200,OK,Stress Test 1-1,text,true,,3109,190,2,2,https://myapplication-appservice.azurewebsites.net/api/Activities,747,0,545
+1731175148161,186,GET Retrieve Activity,200,OK,Stress Test 1-2,text,true,,352,192,2,2,https://myapplication-appservice.azurewebsites.net/api/Activities/1,186,0,0
+1731175148327,196,GET Retrieve Activity,200,OK,Stress Test 1-1,text,true,,350,192,2,2,https://myapplication-appservice.azurewebsites.net/api/Activities/6,196,0,0
+1731175148347,187,POST Create Activity,200,OK,Stress Test 1-2,text,true,,262,319,2,2,https://myapplication-appservice.azurewebsites.net/api/Activities,187,0,0
+1731175148523,192,POST Create Activity,200,OK,Stress Test 1-1,text,true,,262,319,2,2,https://myapplication-appservice.azurewebsites.net/api/Activities,192,0,0
+1731175148534,187,PUT  Update Activity,200,OK,Stress Test 1-2,text,true,,262,320,2,2,https://myapplication-appservice.azurewebsites.net/api/Activities/1,187,0,0
+1731175148721,188,DELETE Remove Activity,200,OK,Stress Test 1-2,,true,,211,214,2,2,https://myapplication-appservice.azurewebsites.net/api/Activities/1,188,0,0
+1731175148715,199,PUT  Update Activity,200,OK,Stress Test 1-1,text,true,,262,320,1,1,https://myapplication-appservice.azurewebsites.net/api/Activities/6,199,0,0
+1731175148915,200,DELETE Remove Activity,200,OK,Stress Test 1-1,,true,,211,214,1,1,https://myapplication-appservice.azurewebsites.net/api/Activities/6,200,0,0
