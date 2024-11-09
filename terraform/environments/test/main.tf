@@ -8,7 +8,7 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    storage_account_name = "tfstate2794125056"
+    storage_account_name = "tfstate1793412797"
     container_name       = "tfstate"
     key                  = "test.terraform.tfstate"
   }
@@ -16,8 +16,8 @@ terraform {
 
 module "resource_group" {
   source               = "../../modules/resource_group"
-  resource_group       = var.resource_group
-  location             = var.location
+  resource_group       = "${var.resource_group}"
+  location             = "${var.location}"
 }
 module "network" {
   source               = "../../modules/network"
@@ -55,4 +55,12 @@ module "publicip" {
   resource_type    = "publicip"
   resource_group   = module.resource_group.resource_group_name
 }
-
+module "vm" {
+  source                = "../../modules/vm"
+  vm_name               = var.vm_name
+  location              = var.location
+  resource_group        = module.resource_group.resource_group_name
+  virtual_network_name  = var.virtual_network_name
+  subnet_id             = module.network.subnet_id_test
+  public_ip_address_id  = module.publicip.public_ip_address_id
+}

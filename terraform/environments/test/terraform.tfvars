@@ -6,8 +6,8 @@ tenant_id = "f958e84a-92b8-439f-a62d-4f45996b6d07"
 access_key = "RsdJmhfeWpG7mWVOGVJsmkG/H9zEfzpKPOv3870H86xTma3s8A9uWUF+4r+eL5q7AR9Tn1Fh61VY+ASt5JaygA=="
 
 # Resource Group/Location
-location = "West Europe"
-resource_group_name = "Azuredevops"
+location = "eastus"
+resource_group = "Azuredevops"
 application_type = "myApplication"
 
 # Network
