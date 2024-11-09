@@ -1,8 +1,13 @@
-name: HuyLQ54-Pipeline-$(Date:yyyyMMddHHmmss)
+name: Azure Pipelines
 
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
 trigger:
   - main
 
+# ToDo: Replace the agent pool name, if you are using Udacity Cloud lab.
+# Otherwise comment out the line below.
 pool: myAgentPool
 
 variables:
@@ -15,35 +20,31 @@ variables:
   environmentName: "test"
 
 stages:
-  - stage: Infrastructure
+  - stage: Build
     jobs:
-      - job: Terraform
+      - job: BuildInfrastructure
         steps:
           # Install Terraform on the pipeline agent
           - task: TerraformInstaller@0
-            displayName: "Terraform installation"
+            displayName: "Terrafom installation"
             inputs:
               terraformVersion: "1.2.9"
 
-          # Run Terraform Init
+          # Run Terraform Init on the pipeline agent
+          # ToDo: Replace the resource group name, storage account name, and container name below
           - task: TerraformTaskV3@3
-            displayName: "Terraform init"
+            displayName: "Terrafom init"
             inputs:
               provider: "azurerm"
               command: "init"
               workingDirectory: "$(System.DefaultWorkingDirectory)/terraform/environments/test"
               backendServiceArm: "$(azureServiceConnectionId)"
-              backendAzureRmResourceGroupName: "$(resource_group_name)"
-              backendAzureRmStorageAccountName: "$(storageAccountName)"
-              backendAzureRmContainerName: "$(containerName)"
+              backendAzureRmResourceGroupName: "Azuredevops"
+              backendAzureRmStorageAccountName: "tfstate1793412797"
+              backendAzureRmContainerName: "tfstate"
               backendAzureRmKey: "test.terraform.tfstate"
-              commandOptions:
-                '-input=false -backend-config="client_id=$(client_id)"
-                -backend-config="client_secret=$(client_secret)"
-                -backend-config="tenant_id=$(tenant_id)"
-                -backend-config="subscription_id=$(subscription_id)"'
 
-            # Run Terraform Validate
+          # Run Terraform Validate
           - task: TerraformTaskV3@3
             displayName: Terraform validate
             inputs:
@@ -51,16 +52,21 @@ stages:
               command: "validate"
 
           # Run Terraform Apply
+          # ToDo: Change the workingDirectory path, as applicable to you
           - task: TerraformTaskV3@3
-            displayName: "Terraform apply"
+            displayName: Terraform apply
             inputs:
               provider: "azurerm"
               command: "apply"
               workingDirectory: "$(System.DefaultWorkingDirectory)/terraform/environments/test"
               environmentServiceNameAzureRM: "$(azureServiceConnectionId)"
-              commandOptions:
-                '-input=false -auto-approve -var="tenant_id=$(tenant_id)"
-                -var="subscription_id=$(subscription_id)"
-                -var="client_id=$(client_id)"
-                -var="client_secret=$(client_secret)"
-                -var="public_key=$(public_key)"'
+
+          # Destroy the resources in Azure
+          # ToDo: Change the workingDirectory path, as applicable to you
+          - task: TerraformTaskV3@3
+            displayName: Terraform destroy
+            inputs:
+              provider: "azurerm"
+              command: "destroy"
+              workingDirectory: "$(System.DefaultWorkingDirectory)/terraform/environments/test"
+              environmentServiceNameAzureRM: "$(azureServiceConnectionId)"
