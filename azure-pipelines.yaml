@@ -256,8 +256,9 @@ stages:
                       unzip -o selenium-$(Build.BuildId).zip
                       FILE=/home/devopsagent/app/chromedriver_linux64.zip
                       if [ ! -f "$FILE" ]; then
-                      wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
-                      unzip -o chromedriver-linux64.zip
+                      LATEST=$(chromium-browser --product-version) 
+                      wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+                      unzip -o chromedriver_linux64.zip
                       sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
                       export PATH=$PATH:/home/azureuser/app
