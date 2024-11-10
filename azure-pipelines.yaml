@@ -121,16 +121,19 @@ stages:
               artifactName: "drop-ui-tests"
 
           - task: ArchiveFiles@2
-            displayName: "Archive PerformanceTestSuite"
+            displayName: "Archive Performance TestSuite"
             inputs:
               rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/testsuite"
               includeRootFolder: false
               archiveType: "zip"
-              archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
+              archiveFile: "$(Build.ArtifactStagingDirectory)/perftests-$(Build.BuildId).zip"
 
-          - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
-            displayName: "Upload Package"
-            artifact: "drop-perftests"
+          - task: PublishPipelineArtifact@1
+            displayName: Publish Testsuite artifact
+            inputs:
+              targetPath: $(Build.ArtifactStagingDirectory)/perftests-$(Build.BuildId).zip"
+              artifactName: "drop-perftests"
+
   - stage: Deploy
     jobs:
       - deployment: DeployFakeRestAPI
@@ -156,6 +159,7 @@ stages:
       - job: Integration
         displayName: "Integration Tests"
         pool: myAgentPool
+
         steps:
           - task: Bash@3
             displayName: "Install Postman & Newman"
@@ -165,7 +169,6 @@ stages:
                 #! /bin/bash
                 pwd
                 sudo snap install postman
-
                 sudo npm install -g newman
                 sudo npm install newman-reporter-junitfull -g
 
@@ -296,6 +299,6 @@ stages:
                       fi
                       export PATH=$PATH:/home/devopsagent/app
                       echo "Starting Selenium Tests"
-                      python3 add_remove_from_cart.py >> selenium.log                   
+                      python3 login.py >> selenium.log                   
                       echo "Completed Selenium Tests. Check selenium.log for results."
                       cat selenium.log
