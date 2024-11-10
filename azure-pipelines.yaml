@@ -226,7 +226,7 @@ stages:
             inputs:
               targetType: "inline"
               script: |
-                /home/devopsagent/myagent/_work/1/drop-perftests/apache-jmeter-5.6.2/bin/jmeter -n -t /home/devopsagent/myagent/_work/1/drop-perftests/StressTestSuite.jmx \
+                /home/devopsagent/myagent/_work/1/drop-perftests/apache-jmeter-5.6.2/bin/jmeter -n -t /home/devopsagent/myagent/_work/1/drop-perftests/StressTest.jmx \
                     -l /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/results_StressTest.csv \
                     -e -f -o /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/StressTestReport \
                     -j /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/JmeterStressTestReport.log \
