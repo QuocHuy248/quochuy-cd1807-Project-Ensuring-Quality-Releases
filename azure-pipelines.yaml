@@ -216,48 +216,48 @@ stages:
                 ls -lah stress-test-report/
                 cat jmeter.log
 
-      #--------------------------------------------#
-      # Selenium | Functional UI Tests
-      # ToDo:
+          #--------------------------------------------#
+          # Selenium | Functional UI Tests
+          # ToDo:
       - deployment: VMDeploy
         displayName: Selenium Tests
         pool: myAgentPool
         environment:
-        name: "test"
+          name: "test"
         strategy:
-        runOnce:
-        deploy:
-          steps:
-            - download: current
-              artifact: drop-ui-tests # ToDo: Change/provide a name
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: drop-ui-tests # ToDo: Change/provide a name
 
-            - task: Bash@3
-              inputs:
-                targetType: "inline"
-                script: |
-                  #! /bin/bash
+                - task: Bash@3
+                  inputs:
+                    targetType: "inline"
+                    script: |
+                      #! /bin/bash
 
-                  sudo apt-get upgrade -y
-                  sudo apt-get install python3-pip -y
-                  sudo apt-get install unzip -y
-                  sudo apt-get install -y chromium-browser
-                  pip3 install selenium
-                  cd ~/
-                  DIR=/home/devopsagent/app
-                  if [ ! -d "$DIR" ]; then
+                      sudo apt-get upgrade -y
+                      sudo apt-get install python3-pip -y
+                      sudo apt-get install unzip -y
+                      sudo apt-get install -y chromium-browser
+                      pip3 install selenium
+                      cd ~/
+                      DIR=/home/devopsagent/app
+                      if [ ! -d "$DIR" ]; then
                       mkdir app
-                  fi
-                  mv /home/devopsagent/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
-                  cd app
-                  unzip -o selenium-$(Build.BuildId).zip
-                  FILE=/home/devopsagent/app/chromedriver_linux64.zip
-                  if [ ! -f "$FILE" ]; then
+                      fi
+                      mv /home/devopsagent/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
+                      cd app
+                      unzip -o selenium-$(Build.BuildId).zip
+                      FILE=/home/devopsagent/app/chromedriver_linux64.zip
+                      if [ ! -f "$FILE" ]; then
                       wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
                       unzip -o chromedriver-linux64.zip
                       sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
-                  fi
-                  export PATH=$PATH:/home/devopsagent/app
-                  echo "Starting Selenium Tests"
-                  python3 add_remove_from_cart.py >> selenium.log                   
-                  echo "Completed Selenium Tests. Check selenium.log for results."
-                  cat selenium.log
+                      fi
+                      export PATH=$PATH:/home/devopsagent/app
+                      echo "Starting Selenium Tests"
+                      python3 add_remove_from_cart.py >> selenium.log                   
+                      echo "Completed Selenium Tests. Check selenium.log for results."
+                      cat selenium.log
