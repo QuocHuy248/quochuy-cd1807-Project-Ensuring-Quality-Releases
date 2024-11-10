@@ -123,7 +123,7 @@ stages:
           - task: ArchiveFiles@2
             displayName: "Archive Performance TestSuite"
             inputs:
-              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/testsuite"
+              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter"
               includeRootFolder: false
               archiveType: "zip"
               archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
@@ -204,53 +204,102 @@ stages:
         pool: myAgentPool
         steps:
           - task: Bash@3
-            displayName: "Endurance Test Suite"
+            displayName: "Extract Performance Test Suite ZIP"
             inputs:
               targetType: "inline"
               script: |
-                cd ~/        
-                DIR=/home/azureuser/testsuite
-                if [ ! -d "$DIR" ]; then
-                mkdir testsuite
-                fi
-                mv /home/azureuser/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
-                cd testsuite
-                unzip -o $(Build.BuildId)-perftests.zip
-                wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
-                tar -xf apache-jmeter-5.6.3.tgz
-                rm -Rf endurance-test-report
-                ./apache-jmeter-5.6.3/bin/jmeter -n \
-                -t EnduranceTestSuite.jmx \
-                -l endurance-test-report/endurance-results.jtl \
-                -e \
-                -o endurance-test-report
-          - task: Bash@3
-            displayName: "Stress Test Suite"
-            inputs:
-              targetType: "inline"
-              script: |
-                cd ~/        
-                DIR=/home/devopsagent/testsuite
-                if [ ! -d "$DIR" ]; then
-                  mkdir testsuite
-                fi
-                cd testsuite
-                rm -Rf stress-test-report
-                ./apache-jmeter-5.6.3/bin/jmeter -n \
-                  -t StressTestSuite.jmx \
-                  -l stress-test-report/stress-results.jtl \
-                  -e \
-                  -o stress-test-report
+                mkdir -p /home/devopsagent/myagent/_work/1/drop-perftests
+                unzip $(Pipeline.Workspace)/drop-perftests/$(Build.BuildId)-perftests.zip -d /home/devopsagent/myagent/_work/1/drop-perftests
+                ls -la /home/devopsagent/myagent/_work/1/drop-perftests
 
           - task: Bash@3
-            displayName: "Print Performance Test Logs"
+            displayName: "Install JMeter"
             inputs:
               targetType: "inline"
-              workingDirectory: /home/devopsagent/testsuite
               script: |
-                ls -lah endurance-test-report/
-                ls -lah stress-test-report/
-                cat jmeter.log
+                wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.2.tgz
+                tar -xzf apache-jmeter-5.6.2.tgz -C /home/devopsagent/myagent/_work/1/drop-perftests
+                ls -la /home/devopsagent/myagent/_work/1/drop-perftests/apache-jmeter-5.6.2
+
+          - task: Bash@3
+            displayName: "Run JMeter Stress Test"
+            inputs:
+              targetType: "inline"
+              script: |
+                /home/devopsagent/myagent/_work/1/drop-perftests/apache-jmeter-5.6.2/bin/jmeter -n -t /home/devopsagent/myagent/_work/1/drop-perftests/StressTestSuite.jmx \
+                    -l /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/results_StressTest.csv \
+                    -e -f -o /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/StressTestReport \
+                    -j /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/JmeterStressTestReport.log \
+                    -JexampleCSV=/home/devopsagent/myagent/_work/1/drop-perftests/exempleCsv.csv \
+                    -JresultsCSV=/home/devopsagent/myagent/_work/1/drop-perftests/results.csv
+              workingDirectory: /home/devopsagent/myagent/_work/1/drop-perftests
+
+          - task: Bash@3
+            displayName: "Run JMeter Endurance Test"
+            inputs:
+              targetType: "inline"
+              script: |
+                /home/devopsagent/myagent/_work/1/drop-perftests/apache-jmeter-5.6.2/bin/jmeter -n -t /home/devopsagent/myagent/_work/1/drop-perftests/EnduranceTest.jmx \
+                    -l /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/results_EnduranceTest.csv \
+                    -e -f -o /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/EnduranceTestReport \
+                    -j /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/JmeterEnduranceTestReport.log \
+                    -JexampleCSV=/home/devopsagent/myagent/_work/1/drop-perftests/exempleCsv.csv \
+                    -JresultsCSV=/home/devopsagent/myagent/_work/1/drop-perftests/results.csv
+              workingDirectory: /home/devopsagent/myagent/_work/1/drop-perftests
+          - task: PublishBuildArtifacts@1
+            displayName: "Publish JMeter Test Results"
+            inputs:
+              pathToPublish: "/home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter"
+              artifactName: "jmeter-test-results"
+              publishLocation: "Container"
+          # - task: Bash@3
+          #   displayName: "Endurance Test Suite"
+          #   inputs:
+          #     targetType: "inline"
+          #     script: |
+          #       cd ~/
+          #       DIR=/home/devopsagent/testsuite
+          #       if [ ! -d "$DIR" ]; then
+          #       mkdir testsuite
+          #       fi
+          #       mv /home/devopsagent/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
+          #       cd testsuite
+          #       unzip -o $(Build.BuildId)-perftests.zip
+          #       wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
+          #       tar -xf apache-jmeter-5.6.3.tgz
+          #       rm -Rf endurance-test-report
+          #       ./apache-jmeter-5.6.3/bin/jmeter -n \
+          #       -t EnduranceTestSuite.jmx \
+          #       -l endurance-test-report/endurance-results.jtl \
+          #       -e \
+          #       -o endurance-test-report
+          # - task: Bash@3
+          #   displayName: "Stress Test Suite"
+          #   inputs:
+          #     targetType: "inline"
+          #     script: |
+          #       cd ~/
+          #       DIR=/home/devopsagent/testsuite
+          #       if [ ! -d "$DIR" ]; then
+          #         mkdir testsuite
+          #       fi
+          #       cd testsuite
+          #       rm -Rf stress-test-report
+          #       ./apache-jmeter-5.6.3/bin/jmeter -n \
+          #         -t StressTestSuite.jmx \
+          #         -l stress-test-report/stress-results.jtl \
+          #         -e \
+          #         -o stress-test-report
+
+          # - task: Bash@3
+          #   displayName: "Print Performance Test Logs"
+          #   inputs:
+          #     targetType: "inline"
+          #     workingDirectory: /home/devopsagent/testsuite
+          #     script: |
+          #       ls -lah endurance-test-report/
+          #       ls -lah stress-test-report/
+          #       cat jmeter.log
 
           #--------------------------------------------#
           # Selenium | Functional UI Tests
