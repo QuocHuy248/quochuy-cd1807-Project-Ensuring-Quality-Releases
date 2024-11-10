@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 from selenium import webdriver
-from chromedriver_py import binary_path # this will get you the path variable
+from chromedriver_py import binary_path  # this will get you the path variable
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.common.by import By  # Import the By class
+from selenium.webdriver.chrome.service import Service  # Import Service
 import os
 
 # Start the browser and login with standard_user
@@ -12,7 +13,9 @@ def login(user, password):
     options = ChromeOptions()
     options.add_argument("--headless")  # Run Chrome in headless mode
     
-    driver = webdriver.Chrome(executable_path=binary_path, options=options)
+    # Use Service instead of executable_path
+    service = Service(executable_path=binary_path)
+    driver = webdriver.Chrome(service=service, options=options)  # Pass Service as argument
     
     print('Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
