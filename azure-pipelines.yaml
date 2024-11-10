@@ -176,6 +176,8 @@ stages:
                 if [ ! -d "$DIR" ]; then
                 mkdir testsuite
                 fi
+                mv /home/azureuser/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
+                cd testsuite
                 unzip -o $(Build.BuildId)-perftests.zip
                 wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
                 tar -xf apache-jmeter-5.6.3.tgz
@@ -222,13 +224,12 @@ stages:
         pool: myAgentPool
         environment:
           name: "test"
-          resourceType: VirtualMachine
         strategy:
           runOnce:
             deploy:
               steps:
                 - download: current
-                  artifact: drop-ui-tests # ToDo: Change/provide a name
+                  artifact: drop-ui-tests
 
                 - task: Bash@3
                   inputs:
@@ -251,9 +252,9 @@ stages:
                       unzip -o selenium-$(Build.BuildId).zip
                       FILE=/home/azureuser/app/chromedriver_linux64.zip
                       if [ ! -f "$FILE" ]; then
-                          wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
-                          unzip -o chromedriver-linux64.zip
-                          sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+                      wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
+                      unzip -o chromedriver-linux64.zip
+                      sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
                       export PATH=$PATH:/home/azureuser/app
                       echo "Starting Selenium Tests"
