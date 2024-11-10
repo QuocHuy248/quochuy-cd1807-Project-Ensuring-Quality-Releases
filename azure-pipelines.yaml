@@ -128,11 +128,9 @@ stages:
               archiveType: "zip"
               archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
 
-          - task: PublishPipelineArtifact@1
-            displayName: Publish Testsuite artifact
-            inputs:
-              targetPath: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
-              artifactName: "drop-perftests"
+          - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
+            displayName: "Upload Package"
+            artifact: "drop-perftests"
 
   - stage: Deploy
     jobs:
@@ -210,25 +208,22 @@ stages:
             inputs:
               targetType: "inline"
               script: |
-                DIR=/home/devopsagent/testsuite
-                mkdir -p $DIR
-                mv $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip $DIR || echo "Archive move failed"
-                cd $DIR
-                unzip -o $(Build.BuildId)-perftests.zip || echo "Unzip failed"
-                # Check if EnduranceTestSuite.jmx exists
-                if [ ! -f "EnduranceTestSuite.jmx" ]; then
-                  echo "Error: EnduranceTestSuite.jmx file not found"
-                  exit 1
+                cd ~/        
+                DIR=/home/azureuser/testsuite
+                if [ ! -d "$DIR" ]; then
+                mkdir testsuite
                 fi
+                mv /home/azureuser/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
+                cd testsuite
+                unzip -o $(Build.BuildId)-perftests.zip
                 wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
                 tar -xf apache-jmeter-5.6.3.tgz
-                 rm -Rf endurance-test-report
+                rm -Rf endurance-test-report
                 ./apache-jmeter-5.6.3/bin/jmeter -n \
-                 -t EnduranceTestSuite.jmx \
-                 -l endurance-test-report/endurance-results.jtl \
+                -t EnduranceTestSuite.jmx \
+                -l endurance-test-report/endurance-results.jtl \
                 -e \
                 -o endurance-test-report
-
           - task: Bash@3
             displayName: "Stress Test Suite"
             inputs:
