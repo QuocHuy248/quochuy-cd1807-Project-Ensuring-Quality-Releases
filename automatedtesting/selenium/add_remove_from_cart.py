@@ -10,11 +10,15 @@ import os
 def login(user, password):
     print('Starting the browser...')
     
+    # Set up Chrome options
     options = ChromeOptions()
     options.add_argument("--headless")  # Run Chrome in headless mode
+    options.add_argument("--no-sandbox")  # Add no-sandbox flag
+    options.add_argument("--disable-dev-shm-usage")  # Disable dev shmem usage
+    options.add_argument("--remote-debugging-port=9222")  # Add remote debugging port
     
     # Use Service instead of executable_path
-    service = Service(executable_path=binary_path)
+    service = Service(executable_path=binary_path)  # Specify the path for chromedriver
     driver = webdriver.Chrome(service=service, options=options)  # Pass Service as argument
     
     print('Browser started successfully. Navigating to the demo page to login.')
@@ -46,11 +50,14 @@ def remove_all_products_from_cart(driver):
     print(f'Removed {len(remove_buttons)} products from cart.')
 
 def main():
+    # Perform login
     driver = login('standard_user', 'secret_sauce')
     
+    # Add and remove products from cart
     add_all_products_to_cart(driver)
     remove_all_products_from_cart(driver)
     
+    # Quit the browser after tests
     driver.quit()
 
 if __name__ == "__main__":
