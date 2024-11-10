@@ -260,6 +260,7 @@ stages:
                          unzip -o chromedriver_linux64.zip
                         sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
+                      pip install chromedriver-py==112.0.5615.49
                       export PATH=$PATH:/home/azureuser/app
                       echo "Starting Selenium Tests"
                       python3 add_remove_from_cart.py >> selenium.log
