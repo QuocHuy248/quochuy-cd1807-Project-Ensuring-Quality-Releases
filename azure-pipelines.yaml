@@ -169,19 +169,57 @@ stages:
           - task: Bash@3
             displayName: "Endurance Test Suite"
             inputs:
-              targetType: "inline"
+              argetType: "inline"
               script: |
-                cd ~/        
-                DIR=/home/devopsagent/testsuite
+
+                cd ~
+                    
+                # Set variables for directories and files
+                DIR="/home/devopsagent/testsuite"
+                ZIP_FILE="/home/devopsagent/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip"
+                JMETER_TGZ="https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
+                    
+
                 if [ ! -d "$DIR" ]; then
-                mkdir testsuite
+                mkdir -p "$DIR"
                 fi
-                mv /home/devopsagent/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
-                cd testsuite
-                unzip -o $(Build.BuildId)-perftests.zip
-                wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
-                tar -xf apache-jmeter-5.6.3.tgz
+                    
+
+                if [ -f "$ZIP_FILE" ]; then
+                mv "$ZIP_FILE" "$DIR"
+                else
+                echo "Error: $ZIP_FILE does not exist."
+                exit 1
+                fi
+                    
+
+                cd "$DIR"
+                    
+
+                if [ -f "$(Build.BuildId)-perftests.zip" ]; then
+                unzip -o "$(Build.BuildId)-perftests.zip"
+                else
+                echo "Error: $(Build.BuildId)-perftests.zip not found after moving."
+                exit 1
+                fi
+                    
+
+                if [ ! -d "apache-jmeter-5.6.3" ]; then
+                wget -q "$JMETER_TGZ" -O apache-jmeter.tgz
+                tar -xf apache-jmeter.tgz
+                rm apache-jmeter.tgz
+                fi
+                    
+
+                if [ ! -f "EnduranceTestSuite.jmx" ]; then
+                echo "Error: EnduranceTestSuite.jmx does not exist in $DIR."
+                exit 1
+                fi
+                    
+
                 rm -Rf endurance-test-report
+                    
+
                 ./apache-jmeter-5.6.3/bin/jmeter -n \
                 -t EnduranceTestSuite.jmx \
                 -l endurance-test-report/endurance-results.jtl \
@@ -242,22 +280,38 @@ stages:
                       sudo apt-get install unzip -y
                       sudo apt-get install -y chromium-browser
                       pip3 install selenium
-                      cd ~/
+
+
                       DIR=/home/devopsagent/app
                       if [ ! -d "$DIR" ]; then
                       mkdir app
                       fi
+
+
                       mv /home/devopsagent/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
                       cd app
                       unzip -o selenium-$(Build.BuildId).zip
+
+
+                      if [ ! -f "add_remove_from_cart.py" ]; then
+                      echo "Error: add_remove_from_cart.py does not exist in /home/devopsagent/app"
+                       exit 1
+                      fi
+
+
                       FILE=/home/devopsagent/app/chromedriver_linux64.zip
                       if [ ! -f "$FILE" ]; then
                       wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
                       unzip -o chromedriver-linux64.zip
-                      sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+                      ln -sf "$(pwd)/chromedriver-linux64/chromedriver" /usr/local/bin/chromedriver
                       fi
+
+
                       export PATH=$PATH:/home/devopsagent/app
                       echo "Starting Selenium Tests"
-                      python3 add_remove_from_cart.py >> selenium.log                   
+
+
+                      python3 add_remove_from_cart.py >> selenium.log
+
                       echo "Completed Selenium Tests. Check selenium.log for results."
                       cat selenium.log
