@@ -136,7 +136,7 @@ stages:
         displayName: "Deploy Webapp"
         pool: myAgentPool
         environment:
-          name: "${environmentName}"
+          name: "$(environmentName)"
         strategy:
           runOnce:
             deploy:
