@@ -172,11 +172,11 @@ stages:
               targetType: "inline"
               script: |
                 cd ~/
-                DIR=/home/azureuser/testsuite
+                DIR=/home/devopsagent/testsuite
                 if [ ! -d "$DIR" ]; then
                 mkdir testsuite
                 fi
-                mv /home/azureuser/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
+                mv /home/devopsagent/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
                 cd testsuite
                 unzip -o $(Build.BuildId)-perftests.zip
                 wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
@@ -194,7 +194,7 @@ stages:
               targetType: "inline"
               script: |
                 cd ~/
-                DIR=/home/azureuser/testsuite
+                DIR=/home/devopsagent/testsuite
                 if [ ! -d "$DIR" ]; then
                 mkdir testsuite
                 fi
@@ -210,7 +210,7 @@ stages:
             displayName: "Print Performance Test Logs"
             inputs:
               targetType: "inline"
-              workingDirectory: /home/azureuser/testsuite
+              workingDirectory: /home/devopsagent/testsuite
               script: |
                 ls -lah endurance-test-report/
                 ls -lah stress-test-report/
@@ -244,20 +244,20 @@ stages:
                       sudo apt-get install -y chromium-browser
                       pip3 install selenium
                       cd ~/
-                      DIR=/home/azureuser/app
+                      DIR=/home/devopsagent/app
                       if [ ! -d "$DIR" ]; then
                           mkdir app
                       fi
-                      mv /home/azureuser/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
+                      mv /home/devopsagent/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
                       cd app
                       unzip -o selenium-$(Build.BuildId).zip
-                      FILE=/home/azureuser/app/chromedriver_linux64.zip
+                      FILE=/home/devopsagent/app/chromedriver_linux64.zip
                       if [ ! -f "$FILE" ]; then
                       wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
                       unzip -o chromedriver-linux64.zip
                       sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
-                      export PATH=$PATH:/home/azureuser/app
+                      export PATH=$PATH:/home/devopsagent/app
                       echo "Starting Selenium Tests"
                       python3 add_remove_from_cart.py >> selenium.log
                       echo "Completed Selenium Tests. Check selenium.log for results."
