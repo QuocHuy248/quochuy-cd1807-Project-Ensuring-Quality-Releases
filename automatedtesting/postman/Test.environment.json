@@ -1,0 +1,14 @@
+{
+	"id": "268ea84d-5d9c-4129-9f83-57773766eea1",
+	"name": "Udacity Azure Devops Project 3",
+	"values": [
+		{
+			"key": "url",
+			"value": "myapplication-quochuyappservice.azurewebsites.net/api",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-11-10T04:03:53.417Z",
+	"_postman_exported_using": "Postman/11.19.0"
+}
