@@ -242,10 +242,9 @@ stages:
                       sudo apt-get install python3-pip -y
                       sudo apt-get install unzip -y
                       sudo apt-get install -y chromium-browser
-                      sudo apt-get install python3-venv
+                      sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3-venv
                       python3 -m venv selenium_env
                       source selenium_env/bin/activate
-                      sudo DEBIAN_FRONTEND=noninteractive
                       pip install selenium
                       cd ~/
                       DIR=/home/azureuser/app
