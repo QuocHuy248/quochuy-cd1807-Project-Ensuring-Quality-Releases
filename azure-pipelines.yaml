@@ -86,7 +86,7 @@ stages:
           - task: ArchiveFiles@2
             displayName: "Archive Performance TestSuite"
             inputs:
-              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter"
+              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/testsuite"
               includeRootFolder: false
               archiveType: "zip"
               archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
@@ -239,21 +239,20 @@ stages:
                       sudo apt-get install unzip -y
                       sudo apt-get install -y chromium-browser
                       pip3 install selenium
-                      cd ~/
-                      DIR=/home/devopsagent/app
+                      DIR=~/app
                       if [ ! -d "$DIR" ]; then
-                          mkdir app
+                      mkdir app
                       fi
-                      mv /home/devopsagent/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
                       cd app
                       unzip -o selenium-$(Build.BuildId).zip
-                      FILE=/home/devopsagent/app/chromedriver_linux64.zip
+                      FILE=~/app/chromedriver_linux64.zip
                       if [ ! -f "$FILE" ]; then
-                          wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
-                          unzip -o chromedriver-linux64.zip
-                          sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+                      LATEST=$(chromium-browser --product-version) # <------- HERE
+                      wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+                      unzip -o chromedriver_linux64.zip
+                      sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
-                      export PATH=$PATH:/home/devopsagent/app
+                      export PATH=$PATH:~/app
                       echo "Starting Selenium Tests"
                       python3 login.py >> selenium.log                   
                       echo "Completed Selenium Tests. Check selenium.log for results."
