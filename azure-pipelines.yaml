@@ -45,7 +45,7 @@ stages:
               workingDirectory: "$(System.DefaultWorkingDirectory)/terraform/environments/test"
               backendServiceArm: "$(azureServiceConnectionId)"
               backendAzureRmResourceGroupName: "Azuredevops"
-              backendAzureRmStorageAccountName: "tfstate1793412797"
+              backendAzureRmStorageAccountName: "tfstate2071127957"
               backendAzureRmContainerName: "tfstate"
               backendAzureRmKey: "test.terraform.tfstate"
 
@@ -91,122 +91,122 @@ stages:
           #     environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
           #--------------------------------------------#
 
-  - stage: Build
-    dependsOn: Infrastructure
-    jobs:
-      - job: Archive_fakerestapi_web_package
-        steps:
-          # Archive the web package
-          - task: ArchiveFiles@2
-            displayName: "Archive fakerestapi web package"
-            inputs:
-              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/fakerestapi"
-              includeRootFolder: false
-              archiveType: "zip"
-              archiveFile: "$(Build.ArtifactStagingDirectory)/webapp-$(Build.BuildId)"
-              replaceExistingArchive: true
+  # - stage: Build
+  #   dependsOn: Infrastructure
+  #   jobs:
+  #     - job: Archive_fakerestapi_web_package
+  #       steps:
+  #         # Archive the web package
+  #         - task: ArchiveFiles@2
+  #           displayName: "Archive fakerestapi web package"
+  #           inputs:
+  #             rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/fakerestapi"
+  #             includeRootFolder: false
+  #             archiveType: "zip"
+  #             archiveFile: "$(Build.ArtifactStagingDirectory)/webapp-$(Build.BuildId)"
+  #             replaceExistingArchive: true
 
-          # Publish the archived package as an artifact
-          - task: PublishBuildArtifacts@1
-            displayName: "Publish Artifact: webapp"
-            inputs:
-              PathtoPublish: "$(Build.ArtifactStagingDirectory)/webapp-$(Build.BuildId).zip"
-              ArtifactName: "webapp-$(Build.BuildId)"
-  - stage: Deploy
-    dependsOn: Build
-    jobs:
-      - job: DeployWebAppToAzure
-        steps:
-          # Download the published artifact
-          - task: DownloadPipelineArtifact@2
-            displayName: "Download webapp artifact"
-            inputs:
-              artifact: "webapp-$(Build.BuildId)"
+  #         # Publish the archived package as an artifact
+  #         - task: PublishBuildArtifacts@1
+  #           displayName: "Publish Artifact: webapp"
+  #           inputs:
+  #             PathtoPublish: "$(Build.ArtifactStagingDirectory)/webapp-$(Build.BuildId).zip"
+  #             ArtifactName: "webapp-$(Build.BuildId)"
+  # - stage: Deploy
+  #   dependsOn: Build
+  #   jobs:
+  #     - job: DeployWebAppToAzure
+  #       steps:
+  #         # Download the published artifact
+  #         - task: DownloadPipelineArtifact@2
+  #           displayName: "Download webapp artifact"
+  #           inputs:
+  #             artifact: "webapp-$(Build.BuildId)"
 
-              # Deploy the archived package to Azure Web App
-          - task: AzureWebApp@1
-            displayName: "Deploy to Azure Web App"
-            inputs:
-              azureSubscription: "$(azureServiceConnectionId)"
-              appType: "webApp"
-              appName: "myApplication-AppService"
-              package: "$(Pipeline.Workspace)/webapp-$(Build.BuildId).zip"
-              deployToSlotOrASE: false
-  - stage: Testing
-    dependsOn: Deploy
-    condition: succeeded()
-    jobs:
-      - job: JMeterTest
-        displayName: Performance testing by JMeter
-        pool:
-          vmImage: "ubuntu-latest"
-        steps:
-          - script: |
-              wget https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.6.2.tgz
-              tar -xzvf apache-jmeter-5.6.2.tgz
-            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite"
-            displayName: "Install JMeter"
-          - script: |
-              mkdir -p html-report/stress-test
-              apache-jmeter-5.6.2/bin/jmeter -n -t StressTest.jmx -l simple-result-stress-test.csv -e -o html-report/stress-test
-            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter"
-            displayName: "Execute JMeter Test Stress Test"
+  #             # Deploy the archived package to Azure Web App
+  #         - task: AzureWebApp@1
+  #           displayName: "Deploy to Azure Web App"
+  #           inputs:
+  #             azureSubscription: "$(azureServiceConnectionId)"
+  #             appType: "webApp"
+  #             appName: "myApplication-AppService"
+  #             package: "$(Pipeline.Workspace)/webapp-$(Build.BuildId).zip"
+  #             deployToSlotOrASE: false
+  # - stage: Testing
+  #   dependsOn: Deploy
+  #   condition: succeeded()
+  #   jobs:
+  #     - job: JMeterTest
+  #       displayName: Performance testing by JMeter
+  #       pool:
+  #         vmImage: "ubuntu-latest"
+  #       steps:
+  #         - script: |
+  #             wget https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.6.2.tgz
+  #             tar -xzvf apache-jmeter-5.6.2.tgz
+  #           workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite"
+  #           displayName: "Install JMeter"
+  #         - script: |
+  #             mkdir -p html-report/stress-test
+  #             apache-jmeter-5.6.2/bin/jmeter -n -t StressTest.jmx -l simple-result-stress-test.csv -e -o html-report/stress-test
+  #           workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter"
+  #           displayName: "Execute JMeter Test Stress Test"
 
-          - script: |
-              mkdir -p html-report/endurance-test
-              apache-jmeter-5.6.2/bin/jmeter -n -t EnduranceTest.jmx -l simple-result-endurance-test.csv -e -o html-report/endurance-test
-            workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter"
-            displayName: "Execute JMeter Test Endurance Test"
+  #         - script: |
+  #             mkdir -p html-report/endurance-test
+  #             apache-jmeter-5.6.2/bin/jmeter -n -t EnduranceTest.jmx -l simple-result-endurance-test.csv -e -o html-report/endurance-test
+  #           workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter"
+  #           displayName: "Execute JMeter Test Endurance Test"
 
-          - task: ArchiveFiles@2
-            displayName: "Archive PerformanceTestSuite"
-            inputs:
-              rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite/html-report"
-              includeRootFolder: false
-              archiveType: "zip"
-              archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
-          # JMeter Test Suite - Publish
-          - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
-            displayName: "Upload Performance Test Result"
-            artifact: "webapp-$(Build.BuildId)"
-      - job: TestPostman
-        pool:
-          vmImage: "ubuntu-latest"
-        steps:
-          - task: NodeTool@0
-            inputs:
-              versionSource: "spec"
-              versionSpec: "16.x"
-          - task: CmdLine@2
-            displayName: Install Newman
-            inputs:
-              script: "npm install newman -g"
-              workingDirectory: "$(System.DefaultWorkingDirectory)"
-          # Postman Data Validation Test Suite
-          - task: CmdLine@2
-            displayName: Run Data Validation Tests
-            continueOnError: true
-            inputs:
-              script:
-                "newman run Validation.postman_collection.json -e
-                Udacity-Env.postman_environment.json --reporters cli,junit
-                --reporter-junit-export TEST-DataValidation.xml"
-              workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
-          # Postman Regression Test Suite
-          - task: CmdLine@2
-            displayName: Run Regression Tests
-            continueOnError: true
-            inputs:
-              script:
-                "newman run Regression.postman_collection.json -e
-                Udacity-Env.postman_environment.json --reporters cli,junit
-                --reporter-junit-export TEST-Regression.xml"
-              workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
-          # Postman - Publish Results
-          - task: PublishTestResults@2
-            inputs:
-              testResultsFormat: "JUnit"
-              testResultsFiles: "**/TEST-*.xml"
-              searchFolder: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
-              mergeTestResults: true
-              testRunTitle: "ReportTestWithPostman"
+  #         - task: ArchiveFiles@2
+  #           displayName: "Archive PerformanceTestSuite"
+  #           inputs:
+  #             rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite/html-report"
+  #             includeRootFolder: false
+  #             archiveType: "zip"
+  #             archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
+  #         # JMeter Test Suite - Publish
+  #         - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
+  #           displayName: "Upload Performance Test Result"
+  #           artifact: "webapp-$(Build.BuildId)"
+  #     - job: TestPostman
+  #       pool:
+  #         vmImage: "ubuntu-latest"
+  #       steps:
+  #         - task: NodeTool@0
+  #           inputs:
+  #             versionSource: "spec"
+  #             versionSpec: "16.x"
+  #         - task: CmdLine@2
+  #           displayName: Install Newman
+  #           inputs:
+  #             script: "npm install newman -g"
+  #             workingDirectory: "$(System.DefaultWorkingDirectory)"
+  #         # Postman Data Validation Test Suite
+  #         - task: CmdLine@2
+  #           displayName: Run Data Validation Tests
+  #           continueOnError: true
+  #           inputs:
+  #             script:
+  #               "newman run Validation.postman_collection.json -e
+  #               Udacity-Env.postman_environment.json --reporters cli,junit
+  #               --reporter-junit-export TEST-DataValidation.xml"
+  #             workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+  #         # Postman Regression Test Suite
+  #         - task: CmdLine@2
+  #           displayName: Run Regression Tests
+  #           continueOnError: true
+  #           inputs:
+  #             script:
+  #               "newman run Regression.postman_collection.json -e
+  #               Udacity-Env.postman_environment.json --reporters cli,junit
+  #               --reporter-junit-export TEST-Regression.xml"
+  #             workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+  #         # Postman - Publish Results
+  #         - task: PublishTestResults@2
+  #           inputs:
+  #             testResultsFormat: "JUnit"
+  #             testResultsFiles: "**/TEST-*.xml"
+  #             searchFolder: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+  #             mergeTestResults: true
+  #             testRunTitle: "ReportTestWithPostman"
