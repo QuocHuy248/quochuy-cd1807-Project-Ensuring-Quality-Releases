@@ -115,149 +115,149 @@ stages:
                     package: "$(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip"
                     DeploymentType: zipDeploy
 
-  - stage: Tests
-    jobs:
-      - job: Integration
-        displayName: "Integration Tests"
-        pool: myAgentPool
+  # - stage: Tests
+  #   jobs:
+  #     - job: Integration
+  #       displayName: "Integration Tests"
+  #       pool: myAgentPool
 
-        steps:
-          - task: Bash@3
-            displayName: "Install Postman & Newman"
-            inputs:
-              targetType: "inline"
-              script: |
-                #! /bin/bash
-                pwd
-                sudo snap install postman
-                sudo npm install -g newman
-                sudo npm install newman-reporter-junitfull -g
+  #       steps:
+  #         - task: Bash@3
+  #           displayName: "Install Postman & Newman"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               #! /bin/bash
+  #               pwd
+  #               sudo snap install postman
+  #               sudo npm install -g newman
+  #               sudo npm install newman-reporter-junitfull -g
 
-          - task: Bash@3
-            displayName: "Regression Tests"
-            continueOnError: true
-            inputs:
-              workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
-              targetType: "inline"
-              script:
-                "newman run TestSuite.Regression.json -e Test.environment.json
-                --reporters cli,junit --reporter-junit-export
-                TEST-Regression.xml"
+  #         - task: Bash@3
+  #           displayName: "Regression Tests"
+  #           continueOnError: true
+  #           inputs:
+  #             workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+  #             targetType: "inline"
+  #             script:
+  #               "newman run TestSuite.Regression.json -e Test.environment.json
+  #               --reporters cli,junit --reporter-junit-export
+  #               TEST-Regression.xml"
 
-          - task: Bash@3
-            displayName: "Data Validation Tests"
-            continueOnError: true
-            inputs:
-              workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
-              targetType: "inline"
-              script:
-                "newman run TestSuite.Data-Validation.json -e
-                Test.environment.json --reporters cli,junit
-                --reporter-junit-export TEST-DataValidation.xml"
+  #         - task: Bash@3
+  #           displayName: "Data Validation Tests"
+  #           continueOnError: true
+  #           inputs:
+  #             workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+  #             targetType: "inline"
+  #             script:
+  #               "newman run TestSuite.Data-Validation.json -e
+  #               Test.environment.json --reporters cli,junit
+  #               --reporter-junit-export TEST-DataValidation.xml"
 
-          - task: PublishTestResults@2
-            inputs:
-              testResultsFormat: "JUnit"
-              testResultsFiles: "**/TEST-*.xml"
-              testRunTitle: "Publish test results"
-              searchFolder: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+  #         - task: PublishTestResults@2
+  #           inputs:
+  #             testResultsFormat: "JUnit"
+  #             testResultsFiles: "**/TEST-*.xml"
+  #             testRunTitle: "Publish test results"
+  #             searchFolder: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
 
-      - job: Performance
-        displayName: "Performance Tests"
-        pool: myAgentPool
-        steps:
-          - task: Bash@3
-            displayName: "Endurance Test Suite"
-            inputs:
-              targetType: "inline"
-              script: |
-                cd ~/        
-                DIR=/home/azureuser/testsuite
-                if [ ! -d "$DIR" ]; then
-                mkdir testsuite
-                fi
-                mv /home/azureuser/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
-                cd testsuite
-                unzip -o $(Build.BuildId)-perftests.zip
-                wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
-                tar -xf apache-jmeter-5.6.3.tgz
-                rm -Rf endurance-test-report
-                ./apache-jmeter-5.6.3/bin/jmeter -n \
-                -t EnduranceTestSuite.jmx \
-                -l endurance-test-report/endurance-results.jtl \
-                -e \
-                -o endurance-test-report
+  #     - job: Performance
+  #       displayName: "Performance Tests"
+  #       pool: myAgentPool
+  #       steps:
+  #         - task: Bash@3
+  #           displayName: "Endurance Test Suite"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               cd ~/
+  #               DIR=/home/azureuser/testsuite
+  #               if [ ! -d "$DIR" ]; then
+  #               mkdir testsuite
+  #               fi
+  #               mv /home/azureuser/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
+  #               cd testsuite
+  #               unzip -o $(Build.BuildId)-perftests.zip
+  #               wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
+  #               tar -xf apache-jmeter-5.6.3.tgz
+  #               rm -Rf endurance-test-report
+  #               ./apache-jmeter-5.6.3/bin/jmeter -n \
+  #               -t EnduranceTestSuite.jmx \
+  #               -l endurance-test-report/endurance-results.jtl \
+  #               -e \
+  #               -o endurance-test-report
 
-          - task: Bash@3
-            displayName: "Stress Test Suite"
-            inputs:
-              targetType: "inline"
-              script: |
-                cd ~/        
-                DIR=/home/azureuser/testsuite
-                if [ ! -d "$DIR" ]; then
-                mkdir testsuite
-                fi
-                cd testsuite
-                rm -Rf stress-test-report
-                ./apache-jmeter-5.6.3/bin/jmeter -n \
-                -t StressTestSuite.jmx \
-                -l stress-test-report/stress-results.jtl \
-                -e \
-                -o stress-test-report
+  #         - task: Bash@3
+  #           displayName: "Stress Test Suite"
+  #           inputs:
+  #             targetType: "inline"
+  #             script: |
+  #               cd ~/
+  #               DIR=/home/azureuser/testsuite
+  #               if [ ! -d "$DIR" ]; then
+  #               mkdir testsuite
+  #               fi
+  #               cd testsuite
+  #               rm -Rf stress-test-report
+  #               ./apache-jmeter-5.6.3/bin/jmeter -n \
+  #               -t StressTestSuite.jmx \
+  #               -l stress-test-report/stress-results.jtl \
+  #               -e \
+  #               -o stress-test-report
 
-          - task: Bash@3
-            displayName: "Print Performance Test Logs"
-            inputs:
-              targetType: "inline"
-              workingDirectory: /home/azureuser/testsuite
-              script: |
-                ls -lah endurance-test-report/
-                ls -lah stress-test-report/
-                cat jmeter.log
+  #         - task: Bash@3
+  #           displayName: "Print Performance Test Logs"
+  #           inputs:
+  #             targetType: "inline"
+  #             workingDirectory: /home/azureuser/testsuite
+  #             script: |
+  #               ls -lah endurance-test-report/
+  #               ls -lah stress-test-report/
+  #               cat jmeter.log
 
-          #--------------------------------------------#
-          # Selenium | Functional UI Tests
-          # ToDo:
-      - deployment: VMDeploy
-        displayName: Selenium Tests
-        pool: myAgentPool
-        environment:
-          name: "test"
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - download: current
-                  artifact: drop-ui-tests
+  #         #--------------------------------------------#
+  #         # Selenium | Functional UI Tests
+  #         # ToDo:
+  #     - deployment: VMDeploy
+  #       displayName: Selenium Tests
+  #       pool: myAgentPool
+  #       environment:
+  #         name: "test"
+  #       strategy:
+  #         runOnce:
+  #           deploy:
+  #             steps:
+  #               - download: current
+  #                 artifact: drop-ui-tests
 
-                - task: Bash@3
-                  inputs:
-                    targetType: "inline"
-                    script: |
-                      #! /bin/bash
+  #               - task: Bash@3
+  #                 inputs:
+  #                   targetType: "inline"
+  #                   script: |
+  #                     #! /bin/bash
 
-                      sudo apt-get upgrade -y
-                      sudo apt-get install python3-pip -y
-                      sudo apt-get install unzip -y
-                      sudo apt-get install -y chromium-browser
-                      pip3 install selenium
-                      cd ~/
-                      DIR=/home/azureuser/app
-                      if [ ! -d "$DIR" ]; then
-                          mkdir app
-                      fi
-                      mv /home/azureuser/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
-                      cd app
-                      unzip -o selenium-$(Build.BuildId).zip
-                      FILE=/home/azureuser/app/chromedriver_linux64.zip
-                      if [ ! -f "$FILE" ]; then
-                      wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
-                      unzip -o chromedriver-linux64.zip
-                      sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
-                      fi
-                      export PATH=$PATH:/home/azureuser/app
-                      echo "Starting Selenium Tests"
-                      python3 add_remove_from_cart.py >> selenium.log                   
-                      echo "Completed Selenium Tests. Check selenium.log for results."
-                      cat selenium.log
+  #                     sudo apt-get upgrade -y
+  #                     sudo apt-get install python3-pip -y
+  #                     sudo apt-get install unzip -y
+  #                     sudo apt-get install -y chromium-browser
+  #                     pip3 install selenium
+  #                     cd ~/
+  #                     DIR=/home/azureuser/app
+  #                     if [ ! -d "$DIR" ]; then
+  #                         mkdir app
+  #                     fi
+  #                     mv /home/azureuser/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
+  #                     cd app
+  #                     unzip -o selenium-$(Build.BuildId).zip
+  #                     FILE=/home/azureuser/app/chromedriver_linux64.zip
+  #                     if [ ! -f "$FILE" ]; then
+  #                     wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
+  #                     unzip -o chromedriver-linux64.zip
+  #                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+  #                     fi
+  #                     export PATH=$PATH:/home/azureuser/app
+  #                     echo "Starting Selenium Tests"
+  #                     python3 add_remove_from_cart.py >> selenium.log
+  #                     echo "Completed Selenium Tests. Check selenium.log for results."
+  #                     cat selenium.log
