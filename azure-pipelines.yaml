@@ -18,6 +18,7 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)
   # Environment name
   environmentName: "test"
+  webAppName: "myApplication-QuocHuyAppService"
 
 stages:
   #--------------------------------------------#
