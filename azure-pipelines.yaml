@@ -130,22 +130,22 @@ stages:
           - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
             displayName: "Upload Package"
             artifact: "drop-perftests"
-  # - stage: Deploy
-  #   jobs:
-  #     - deployment: DeployFakeRestAPI
-  #       displayName: "Deploy Webapp"
-  #       pool: myAgentPool
-  #       environment:
-  #         name: "$(environmentName)"
-  #       strategy:
-  #         runOnce:
-  #           deploy:
-  #             steps:
-  #               - task: AzureWebApp@1
-  #                 displayName: "Deploy Azure Web App"
-  #                 inputs:
-  #                   azureSubscription: "$(azureServiceConnectionId)"
-  #                   appName: $(webAppName)
-  #                   appType: "webApp"
-  #                   package: "$(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip"
-  #                   DeploymentType: zipDeploy
+  - stage: Deploy
+    jobs:
+      - deployment: DeployFakeRestAPI
+        displayName: "Deploy Webapp"
+        pool: myAgentPool
+        environment:
+          name: "$(environmentName)"
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureWebApp@1
+                  displayName: "Deploy Azure Web App"
+                  inputs:
+                    azureSubscription: "$(azureServiceConnectionId)"
+                    appName: $(webAppName)
+                    appType: "webApp"
+                    package: "$(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip"
+                    DeploymentType: zipDeploy
