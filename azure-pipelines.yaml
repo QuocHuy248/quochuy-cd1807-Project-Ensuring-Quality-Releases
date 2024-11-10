@@ -256,10 +256,10 @@ stages:
                       unzip -o selenium-$(Build.BuildId).zip
                       FILE=/home/devopsagent/app/chromedriver_linux64.zip
                       if [ ! -f "$FILE" ]; then
-                      LATEST=$(chromium-browser --product-version) 
-                      wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-                      unzip -o chromedriver_linux64.zip
-                      sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
+                         LATEST=$(chromium-browser --product-version) 
+                         wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+                         unzip -o chromedriver_linux64.zip
+                        sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
                       export PATH=$PATH:/home/azureuser/app
                       echo "Starting Selenium Tests"
