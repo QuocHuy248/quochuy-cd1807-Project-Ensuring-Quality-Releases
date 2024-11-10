@@ -126,12 +126,12 @@ stages:
               rootFolderOrFile: "$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/testsuite"
               includeRootFolder: false
               archiveType: "zip"
-              archiveFile: "$(Build.ArtifactStagingDirectory)/perftests-$(Build.BuildId).zip"
+              archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
 
           - task: PublishPipelineArtifact@1
             displayName: Publish Testsuite artifact
             inputs:
-              targetPath: $(Build.ArtifactStagingDirectory)/perftests-$(Build.BuildId).zip"
+              targetPath: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip"
               artifactName: "drop-perftests"
 
   - stage: Deploy
