@@ -256,8 +256,7 @@ stages:
                       unzip -o selenium-$(Build.BuildId).zip
                       FILE=/home/devopsagent/app/chromedriver_linux64.zip
                       if [ ! -f "$FILE" ]; then
-                         LATEST=$(chromium-browser --product-version) 
-                         wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+                         wget http://chromedriver.storage.googleapis.com/112.0.5615.49/chromedriver_linux64.zip
                          unzip -o chromedriver_linux64.zip
                         sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
