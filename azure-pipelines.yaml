@@ -243,7 +243,8 @@ stages:
                       sudo apt-get install unzip -y
                       sudo apt-get install -y chromium-browser
 
-                      pip install -U selenium
+                      sudo pip3 uninstall selenium  
+                      sudo pip3 install selenium    
                       cd ~/
                       DIR=/home/azureuser/app
                       if [ ! -d "$DIR" ]; then
