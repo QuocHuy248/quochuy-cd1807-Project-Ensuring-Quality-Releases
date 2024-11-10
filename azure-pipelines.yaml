@@ -245,6 +245,7 @@ stages:
                       sudo apt-get install python3-venv
                       python3 -m venv selenium_env
                       source selenium_env/bin/activate
+                      sudo DEBIAN_FRONTEND=noninteractive
                       pip install selenium
                       cd ~/
                       DIR=/home/azureuser/app
