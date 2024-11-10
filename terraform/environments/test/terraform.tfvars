@@ -3,7 +3,7 @@ subscription_id = "67bd0a2e-3527-452d-b5c9-168d529053f6"
 client_id = "3a810fb7-5477-46d2-947a-615f71555ace"
 client_secret = "Ifj8Q~2DuqMVk2_OsuXNN4AClua_qV7hp-.COaJT"
 tenant_id = "f958e84a-92b8-439f-a62d-4f45996b6d07"
-
+access_key = "ccWKjuQoN7hadNjRAj2+7kGTWF/az8Xy9bkU5jojA+v+14rTDtN6WdnY6MuZN553+bM/z05hdzpe+AStC5ZOmg=="
 
 # Resource Group/Location
 location = "eastus"
