@@ -1,4 +1,4 @@
-name: HuyLQ54-Pipeline-$(Date:yyyyMMddHHmmss)
+name: HuyLQ54-Pipeline-$(Date:yyyyMMddHHmmss).$(Rev:r)
 
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
@@ -169,3 +169,44 @@ stages:
           - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
             displayName: "Upload Performance Test Result"
             artifact: "webapp-$(Build.BuildId)"
+      - job: TestPostman
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSource: "spec"
+              versionSpec: "16.x"
+          - task: CmdLine@2
+            displayName: Install Newman
+            inputs:
+              script: "npm install newman -g"
+              workingDirectory: "$(System.DefaultWorkingDirectory)"
+          # Postman Data Validation Test Suite
+          - task: CmdLine@2
+            displayName: Run Data Validation Tests
+            continueOnError: true
+            inputs:
+              script:
+                "newman run Validation.postman_collection.json -e
+                Udacity-Env.postman_environment.json --reporters cli,junit
+                --reporter-junit-export TEST-DataValidation.xml"
+              workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+          # Postman Regression Test Suite
+          - task: CmdLine@2
+            displayName: Run Regression Tests
+            continueOnError: true
+            inputs:
+              script:
+                "newman run Regression.postman_collection.json -e
+                Udacity-Env.postman_environment.json --reporters cli,junit
+                --reporter-junit-export TEST-Regression.xml"
+              workingDirectory: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+          # Postman - Publish Results
+          - task: PublishTestResults@2
+            inputs:
+              testResultsFormat: "JUnit"
+              testResultsFiles: "**/TEST-*.xml"
+              searchFolder: "$(System.DefaultWorkingDirectory)/automatedtesting/postman"
+              mergeTestResults: true
+              testRunTitle: "ReportTestWithPostman"
