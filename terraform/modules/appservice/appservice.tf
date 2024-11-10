@@ -2,7 +2,7 @@
 
 resource "azurerm_service_plan" "test" {
   name                = "${var.application_type}-${var.resource_type}"
-  location            = "West US"
+  location            = "West Europe"
   resource_group_name = var.resource_group
   os_type             = "Windows"
   sku_name            = "F1"
@@ -10,7 +10,7 @@ resource "azurerm_service_plan" "test" {
 
 resource "azurerm_windows_web_app" "test" {
   name                = "${var.application_type}-${var.resource_type}"
-  location            = "West US"
+  location            = "West Europe"
   resource_group_name = var.resource_group
   service_plan_id     = azurerm_service_plan.test.id
 
