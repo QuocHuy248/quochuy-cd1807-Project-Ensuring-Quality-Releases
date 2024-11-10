@@ -167,93 +167,97 @@ stages:
         pool: myAgentPool
         steps:
           - task: Bash@3
-            displayName: "Extract Performance Test Suite ZIP"
+            displayName: "Endurance Test Suite"
             inputs:
               targetType: "inline"
               script: |
-                mkdir -p /home/devopsagent/myagent/_work/1/drop-perftests
-                unzip $(Pipeline.Workspace)/drop-perftests/$(Build.BuildId)-perftests.zip -d /home/devopsagent/myagent/_work/1/drop-perftests
-                ls -la /home/devopsagent/myagent/_work/1/drop-perftests
+                cd ~/        
+                DIR=/home/devopsagent/testsuite
+                if [ ! -d "$DIR" ]; then
+                mkdir testsuite
+                fi
+                mv /home/devopsagent/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
+                cd testsuite
+                unzip -o $(Build.BuildId)-perftests.zip
+                wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
+                tar -xf apache-jmeter-5.6.3.tgz
+                rm -Rf endurance-test-report
+                ./apache-jmeter-5.6.3/bin/jmeter -n \
+                -t EnduranceTestSuite.jmx \
+                -l endurance-test-report/endurance-results.jtl \
+                -e \
+                -o endurance-test-report
 
           - task: Bash@3
-            displayName: "Install JMeter"
+            displayName: "Stress Test Suite"
             inputs:
               targetType: "inline"
               script: |
-                wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.2.tgz
-                tar -xzf apache-jmeter-5.6.2.tgz -C /home/devopsagent/myagent/_work/1/drop-perftests
-                ls -la /home/devopsagent/myagent/_work/1/drop-perftests/apache-jmeter-5.6.2
+                cd ~/        
+                DIR=/home/devopsagent/testsuite
+                if [ ! -d "$DIR" ]; then
+                mkdir testsuite
+                fi
+                cd testsuite
+                rm -Rf stress-test-report
+                ./apache-jmeter-5.6.3/bin/jmeter -n \
+                -t StressTestSuite.jmx \
+                -l stress-test-report/stress-results.jtl \
+                -e \
+                -o stress-test-report
 
           - task: Bash@3
-            displayName: "Run JMeter Stress Test"
+            displayName: "Print Performance Test Logs"
             inputs:
               targetType: "inline"
+              workingDirectory: /home/devopsagent/testsuite
               script: |
-                /home/devopsagent/myagent/_work/1/drop-perftests/apache-jmeter-5.6.2/bin/jmeter -n -t /home/devopsagent/myagent/_work/1/drop-perftests/StressTest.jmx \
-                    -l /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/results_StressTest.csv \
-                    -e -f -o /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/StressTestReport \
-                    -j /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/JmeterStressTestReport.log \
-                    -JexampleCSV=/home/devopsagent/myagent/_work/1/drop-perftests/exempleCsv.csv \
-                    -JresultsCSV=/home/devopsagent/myagent/_work/1/drop-perftests/results.csv
-              workingDirectory: /home/devopsagent/myagent/_work/1/drop-perftests
+                ls -lah endurance-test-report/
+                ls -lah stress-test-report/
+                cat jmeter.log
 
-          - task: Bash@3
-            displayName: "Run JMeter Endurance Test"
-            inputs:
-              targetType: "inline"
-              script: |
-                /home/devopsagent/myagent/_work/1/drop-perftests/apache-jmeter-5.6.2/bin/jmeter -n -t /home/devopsagent/myagent/_work/1/drop-perftests/EnduranceTest.jmx \
-                    -l /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/results_EnduranceTest.csv \
-                    -e -f -o /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/EnduranceTestReport \
-                    -j /home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter/JmeterEnduranceTestReport.log \
-                    -JexampleCSV=/home/devopsagent/myagent/_work/1/drop-perftests/exempleCsv.csv \
-                    -JresultsCSV=/home/devopsagent/myagent/_work/1/drop-perftests/results.csv
-              workingDirectory: /home/devopsagent/myagent/_work/1/drop-perftests
-          - task: PublishBuildArtifacts@1
-            displayName: "Publish JMeter Test Results"
-            inputs:
-              pathToPublish: "/home/devopsagent/myagent/_work/1/drop-perftests/log/jmeter"
-              artifactName: "jmeter-test-results"
-              publishLocation: "Container"
-
+      #--------------------------------------------#
+      # Selenium | Functional UI Tests
+      # ToDo:
       - deployment: VMDeploy
         displayName: Selenium Tests
         pool: myAgentPool
         environment:
-          name: "$(environmentName)"
+        name: "test"
         strategy:
-          runOnce:
-            deploy:
-              steps:
-                - download: current
-                  artifact: drop-ui-tests
+        runOnce:
+        deploy:
+          steps:
+            - download: current
+              artifact: drop-ui-tests # ToDo: Change/provide a name
 
-                - task: Bash@3
-                  inputs:
-                    targetType: "inline"
-                    script: |
-                      #! /bin/bash
+            - task: Bash@3
+              inputs:
+                targetType: "inline"
+                script: |
+                  #! /bin/bash
 
-                      sudo apt-get upgrade -y
-                      sudo apt-get install python3-pip -y
-                      sudo apt-get install unzip -y
-                      sudo apt-get install -y chromium-browser
-                      pip3 install selenium
-                      DIR=~/app
-                      if [ ! -d "$DIR" ]; then
+                  sudo apt-get upgrade -y
+                  sudo apt-get install python3-pip -y
+                  sudo apt-get install unzip -y
+                  sudo apt-get install -y chromium-browser
+                  pip3 install selenium
+                  cd ~/
+                  DIR=/home/devopsagent/app
+                  if [ ! -d "$DIR" ]; then
                       mkdir app
-                      fi
-                      cd app
-                      unzip -o selenium-$(Build.BuildId).zip
-                      FILE=~/app/chromedriver_linux64.zip
-                      if [ ! -f "$FILE" ]; then
-                      LATEST=$(chromium-browser --product-version) # <------- HERE
-                      wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-                      unzip -o chromedriver_linux64.zip
+                  fi
+                  mv /home/devopsagent/myagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
+                  cd app
+                  unzip -o selenium-$(Build.BuildId).zip
+                  FILE=/home/devopsagent/app/chromedriver_linux64.zip
+                  if [ ! -f "$FILE" ]; then
+                      wget https://storage.googleapis.com/chrome-for-testing-public/125.0.6422.141/linux64/chromedriver-linux64.zip
+                      unzip -o chromedriver-linux64.zip
                       sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
-                      fi
-                      export PATH=$PATH:~/app
-                      echo "Starting Selenium Tests"
-                      python3 login.py >> selenium.log                   
-                      echo "Completed Selenium Tests. Check selenium.log for results."
-                      cat selenium.log
+                  fi
+                  export PATH=$PATH:/home/devopsagent/app
+                  echo "Starting Selenium Tests"
+                  python3 add_remove_from_cart.py >> selenium.log                   
+                  echo "Completed Selenium Tests. Check selenium.log for results."
+                  cat selenium.log
