@@ -1,40 +1,42 @@
 #!/usr/bin/env python
 from selenium import webdriver
-from chromedriver_py import binary_path  # this will get you the path variable
+from chromedriver_py import binary_path  # Đảm bảo rằng binary_path chỉ đến vị trí chính xác của chromedriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.common.by import By  # Import the By class
-from selenium.webdriver.chrome.service import Service  # Import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 import os
 
-# Start the browser and login with standard_user
+# Hàm đăng nhập
 def login(user, password):
     print('Starting the browser...')
     
-    # Set up Chrome options
+    # Thiết lập các tùy chọn Chrome
     options = ChromeOptions()
-    options.add_argument("--headless")  # Run Chrome in headless mode
-    options.add_argument("--no-sandbox")  # Add no-sandbox flag
-    options.add_argument("--disable-dev-shm-usage")  # Disable dev shmem usage
-    options.add_argument("--remote-debugging-port=9222")  # Add remote debugging port
+    options.add_argument("--headless")  # Chạy Chrome ở chế độ headless
+    options.add_argument("--no-sandbox")  # Vô hiệu hóa sandbox
+    options.add_argument("--disable-dev-shm-usage")  # Vô hiệu hóa bộ nhớ chia sẻ
+    options.add_argument("--disable-gpu")  # Tắt GPU (giúp chạy ổn định hơn trên môi trường headless)
+    options.add_argument("--remote-debugging-port=9222")  # Cấu hình cổng cho remote debugging
     
-    # Use Service instead of executable_path
-    service = Service(executable_path=binary_path)  # Specify the path for chromedriver
-    driver = webdriver.Chrome(service=service, options=options)  # Pass Service as argument
+    # Khởi tạo dịch vụ cho ChromeDriver
+    service = Service(binary_path)
+    driver = webdriver.Chrome(service=service, options=options)  # Truyền Service và các tùy chọn vào
     
     print('Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
     
-    # Perform login
+    # Thực hiện đăng nhập
     driver.find_element(By.ID, 'user-name').send_keys(user)
     driver.find_element(By.ID, 'password').send_keys(password)
     driver.find_element(By.ID, 'login-button').click()
     
-    # Verify login was successful
+    # Kiểm tra đăng nhập thành công
     assert "inventory.html" in driver.current_url
     print(f'Login successful with user: {user}')
     
     return driver
 
+# Hàm thêm tất cả sản phẩm vào giỏ hàng
 def add_all_products_to_cart(driver):
     print('Adding all products to cart...')
     add_to_cart_buttons = driver.find_elements(By.CLASS_NAME, 'btn_inventory')
@@ -42,6 +44,7 @@ def add_all_products_to_cart(driver):
         button.click()
     print(f'Added {len(add_to_cart_buttons)} products to cart.')  
 
+# Hàm xóa tất cả sản phẩm khỏi giỏ hàng
 def remove_all_products_from_cart(driver):
     print('Removing all products from cart...')
     remove_buttons = driver.find_elements(By.CLASS_NAME, 'btn_secondary')
@@ -49,15 +52,16 @@ def remove_all_products_from_cart(driver):
         button.click()
     print(f'Removed {len(remove_buttons)} products from cart.')
 
+# Hàm main để chạy các tác vụ chính
 def main():
-    # Perform login
+    # Đăng nhập
     driver = login('standard_user', 'secret_sauce')
     
-    # Add and remove products from cart
+    # Thêm và xóa sản phẩm khỏi giỏ hàng
     add_all_products_to_cart(driver)
     remove_all_products_from_cart(driver)
     
-    # Quit the browser after tests
+    # Đóng trình duyệt sau khi hoàn thành
     driver.quit()
 
 if __name__ == "__main__":
