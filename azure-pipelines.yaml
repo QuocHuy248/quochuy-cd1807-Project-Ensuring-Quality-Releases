@@ -262,13 +262,13 @@ stages:
                       if [ ! -d "$DIR" ]; then
                           mkdir app
                       fi
-                      mv /home/azureuser/azagent/_work/1/drop-ui-tests/selenium-$(Build.BuildId).zip app
+                      mv /home/azureuser/azagent/_work/1/drop-ui-tests/selenium-17.zip app
                       cd app
                       unzip -o selenium-$(Build.BuildId).zip
                       FILE=/home/azureuser/app/chromedriver_linux64.zip
                       if [ ! -f "$FILE" ]; then
                         LATEST=$(chromium-browser --product-version) # <------- HERE
-                         wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+                         wget http://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
                          unzip -o chromedriver-linux64.zip
                          sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
