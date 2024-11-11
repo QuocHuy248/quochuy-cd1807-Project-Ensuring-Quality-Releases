@@ -57,3 +57,7 @@ variable "vm_name" {
   type        = string
 }
 
+variable "admin_username" {}
+variable "admin_password" {}
+variable "packer_image"  {}
+
