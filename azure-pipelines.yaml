@@ -172,11 +172,11 @@ stages:
               targetType: "inline"
               script: |
                 cd ~/
-                DIR=/home/devopsagent/testsuite
+                DIR=/home/azureuser/testsuite
                 if [ ! -d "$DIR" ]; then
                 mkdir testsuite
                 fi
-                mv /home/devopsagent/myagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
+                mv /home/azureuser/azagent/_work/1/drop-perftests/$(Build.BuildId)-perftests.zip testsuite
                 cd testsuite
                 unzip -o $(Build.BuildId)-perftests.zip
                 wget -q "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz"
@@ -194,7 +194,7 @@ stages:
               targetType: "inline"
               script: |
                 cd ~/
-                DIR=/home/devopsagent/testsuite
+                DIR=/home/azureuser/testsuite
                 if [ ! -d "$DIR" ]; then
                 mkdir testsuite
                 fi
@@ -210,7 +210,7 @@ stages:
             displayName: "Print Performance Test Logs"
             inputs:
               targetType: "inline"
-              workingDirectory: /home/devopsagent/testsuite
+              workingDirectory: /home/azureuser/testsuite
               script: |
                 ls -lah endurance-test-report/
                 ls -lah stress-test-report/
@@ -241,6 +241,7 @@ stages:
                       sudo apt-get install python3-pip -y
                       sudo apt-get install unzip -y
                       sudo apt-get install -y chromium-browser
+                      pip install selenium
                       sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3-venv
                       python3 -m venv selenium_env
                       source selenium_env/bin/activate
