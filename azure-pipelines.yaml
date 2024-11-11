@@ -243,10 +243,9 @@ stages:
                       python3 -m venv selenium_env
                       source selenium_env/bin/activate
                       sudo apt-get upgrade -y
-                      sudo apt-get install python3-pip -y
-                      sudo apt-get install unzip -y
-                      sudo apt-get install -y chromium-browser
+                      sudo apt-get install -y python3-pip unzip chromium-browser
                       pip install selenium
+                      pip install chromedriver-py==125.0.6422.141
                       cd ~/
                       DIR=/home/azureuser/app
                       if [ ! -d "$DIR" ]; then
@@ -261,7 +260,6 @@ stages:
                          unzip -o chromedriver-linux64.zip
                          sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                       fi
-                      pip install chromedriver-py==125.0.6422.141
                       export PATH=$PATH:/home/azureuser/app
                       echo "Starting Selenium Tests"
                       python3 add_remove_from_cart.py >> selenium.log
