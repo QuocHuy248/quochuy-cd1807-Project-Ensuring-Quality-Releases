@@ -1,68 +1,85 @@
-#!/usr/bin/env python
+# #!/usr/bin/env python
 from selenium import webdriver
-from chromedriver_py import binary_path  # Đảm bảo rằng binary_path chỉ đến vị trí chính xác của chromedriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+import datetime
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-import os
+from selenium.webdriver.common.keys import Keys
 
-# Hàm đăng nhập
+def timestamp():
+    ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return (ts + '\t')
+
+# Start the browser and login with standard_user
 def login(user, password):
-    print('Starting the browser...')
-    
-    # Thiết lập các tùy chọn Chrome
+    print(timestamp() + 'Starting the browser...')
     options = ChromeOptions()
-    options.add_argument("--headless")  # Chạy Chrome ở chế độ headless
-    options.add_argument("--no-sandbox")  # Vô hiệu hóa sandbox
-    options.add_argument("--disable-dev-shm-usage")  # Vô hiệu hóa bộ nhớ chia sẻ
-    options.add_argument("--disable-gpu")  # Tắt GPU (giúp chạy ổn định hơn trên môi trường headless)
-    options.add_argument("--remote-debugging-port=9222")  # Cấu hình cổng cho remote debugging
-    
-    # Khởi tạo dịch vụ cho ChromeDriver
-    service = Service(binary_path)
-    driver = webdriver.Chrome(service=service, options=options)  # Truyền Service và các tùy chọn vào
-    
-    print('Browser started successfully. Navigating to the demo page to login.')
+    options.add_argument('--no-sandbox')
+    options.add_argument("--headless") 
+    driver = webdriver.Chrome(options=options)
+    print(timestamp() + 'Browser started successfully. Navigating to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
-    
-    # Thực hiện đăng nhập
-    driver.find_element(By.ID, 'user-name').send_keys(user)
-    driver.find_element(By.ID, 'password').send_keys(password)
-    driver.find_element(By.ID, 'login-button').click()
-    
-    # Kiểm tra đăng nhập thành công
-    assert "inventory.html" in driver.current_url
-    print(f'Login successful with user: {user}')
-    
+    # login
+    driver.find_element(By.CSS_SELECTOR, "input[id='user-name']").send_keys(user)
+    driver.find_element(By.CSS_SELECTOR, "input[id='password']").send_keys(password)   
+    driver.find_element(By.ID, 'login-button').click() 
+    print(timestamp() + 'Login with username {:s} and password {:s} successfully.'.format(user, password))
     return driver
 
-# Hàm thêm tất cả sản phẩm vào giỏ hàng
-def add_all_products_to_cart(driver):
-    print('Adding all products to cart...')
-    add_to_cart_buttons = driver.find_elements(By.CLASS_NAME, 'btn_inventory')
-    for button in add_to_cart_buttons:
-        button.click()
-    print(f'Added {len(add_to_cart_buttons)} products to cart.')  
+def add_cart(driver, n_items):
+    print (timestamp() +'Test: adding items to cart')
+    for i in range(n_items):
+        element = "a[id='item_" + str(i) + "_title_link']"  
+        driver.find_element(By.CSS_SELECTOR, element).click() 
+        driver.find_element(By.CSS_SELECTOR, "button.btn_primary.btn_inventory").click() 
+        product= driver.find_element(By.CSS_SELECTOR, '.inventory_details_name.large_size').text
+        print(timestamp() + product + " added to shopping cart.")  
+        driver.find_element(By.CSS_SELECTOR, "button.inventory_details_back_button").click()
+    print(timestamp() + '{:d} items are all added to shopping cart successfully.'.format(n_items))
 
-# Hàm xóa tất cả sản phẩm khỏi giỏ hàng
-def remove_all_products_from_cart(driver):
-    print('Removing all products from cart...')
-    remove_buttons = driver.find_elements(By.CLASS_NAME, 'btn_secondary')
-    for button in remove_buttons:
-        button.click()
-    print(f'Removed {len(remove_buttons)} products from cart.')
+def remove_cart(driver, n_items):
+    for i in range(n_items):
+        element = "a[id='item_" + str(i) + "_title_link']"
+        driver.find_element(By.CSS_SELECTOR, element).click()
+        driver.find_element(By.CSS_SELECTOR, "button.btn_secondary.btn_inventory").click()
+        product = driver.find_element(By.CSS_SELECTOR, '.inventory_details_name.large_size').text
+        
+        print(timestamp() + product + " removed from shopping cart.") 
+        driver.find_element(By.CSS_SELECTOR, "button.inventory_details_back_button").click()
+    print(timestamp() + '{:d} items are all removed from shopping cart successfully.'.format(n_items))
 
-# Hàm main để chạy các tác vụ chính
-def main():
-    # Đăng nhập
-    driver = login('standard_user', 'secret_sauce')
-    
-    # Thêm và xóa sản phẩm khỏi giỏ hàng
-    add_all_products_to_cart(driver)
-    remove_all_products_from_cart(driver)
-    
-    # Đóng trình duyệt sau khi hoàn thành
-    driver.quit()
+def add_cart_check(driver, n_items):
+    print (timestamp() +'Test: adding items to cart for check out')
+    for i in range(n_items):
+        element = "a[id='item_" + str(i) + "_title_link']"    
+        driver.find_element(By.CSS_SELECTOR, element).click()
+        driver.find_element(By.CSS_SELECTOR, "button.btn_primary.btn_inventory").click()
+        product = driver.find_element(By.CSS_SELECTOR, '.inventory_details_name.large_size').text
+        
+        print(timestamp() + product + " added to shopping cart.")  
+        driver.find_element(By.CSS_SELECTOR, "button.inventory_details_back_button").click() 
+    print(timestamp() + '{:d} items are all added to shopping cart successfully ready checkout.'.format(n_items))
+
+def check_out(driver):
+    driver.get('https://www.saucedemo.com/inventory.html')   
+    driver.find_element(By.CSS_SELECTOR, '.shopping_cart_badge').click()
+    driver.find_element(By.CSS_SELECTOR, '#checkout').click()
+    driver.find_element(By.CSS_SELECTOR, "input[id='first-name']").send_keys('Khanh')
+    driver.find_element(By.CSS_SELECTOR, "input[id='last-name']").send_keys('Doan')
+    driver.find_element(By.CSS_SELECTOR, "input[id='postal-code']").send_keys('11111')
+    driver.find_element(By.CSS_SELECTOR, '#continue').click()
+    driver.find_element(By.CSS_SELECTOR, '#finish').click()
+    status_check = driver.find_element(By.CSS_SELECTOR, '.complete-header').text
+        
+    print(timestamp() + status_check + " .Your order has been dispatched, and will arrive just as fast as the pony can get there!")
+    driver.find_element(By.CSS_SELECTOR, '#back-to-products').click()  
 
 if __name__ == "__main__":
-    main()
+    N_ITEMS = 6
+    TEST_USERNAME = 'standard_user'
+    TEST_PASSWORD = 'secret_sauce'
+    driver = login(TEST_USERNAME, TEST_PASSWORD)
+    add_cart(driver, N_ITEMS)
+    remove_cart(driver, N_ITEMS)
+    add_cart_check(driver, N_ITEMS)
+    check_out(driver)
+    print(timestamp() + 'Selenium tests are all successfully completed!')
