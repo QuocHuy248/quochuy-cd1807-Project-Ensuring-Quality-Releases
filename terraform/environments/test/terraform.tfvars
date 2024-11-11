@@ -18,4 +18,5 @@ address_prefix_test = "10.5.1.0/24"
 #Virtual Machine 
 vm_name = "myVirtualMachine"
 
+# VM
 packer_image= "/subscriptions/c761712a-772e-4832-b4d5-73b3a4b12e0b/resourceGroups/Azuredevops/providers/Microsoft.Compute/images/myPackerImage"

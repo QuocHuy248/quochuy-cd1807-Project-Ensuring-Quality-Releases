@@ -64,7 +64,5 @@ module "vm" {
   virtual_network_name  = var.virtual_network_name
   subnet_id             = module.network.subnet_id_test
   public_ip_address_id  = module.publicip.public_ip_address_id
-  admin_username        = var.admin_username
-  admin_password        = "Password1234!"
   packer_image          = var.packer_image
 }

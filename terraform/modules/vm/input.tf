@@ -28,6 +28,4 @@ variable "public_ip_address_id" {
   description = "The ID of the public IP address"
   type        = string
 }
-variable "admin_username" {}
-variable "admin_password" {}
 variable "packer_image" {}
