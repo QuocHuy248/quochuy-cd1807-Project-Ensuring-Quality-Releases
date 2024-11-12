@@ -1,0 +1,586 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1731437386438,1972,activities all GET,200,OK,Endurance Test Suite 1-1,text,true,,3109,198,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,1972,0,580
+1731437388223,189,activities all GET,200,OK,Endurance Test Suite 1-2,text,true,,3109,198,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,189,0,114
+1731437388415,57,activities GET,200,OK,Endurance Test Suite 1-2,text,true,,351,200,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,57,0,0
+1731437388417,59,activities GET,200,OK,Endurance Test Suite 1-1,text,true,,351,200,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,59,0,0
+1731437388474,99,activities POST,200,OK,Endurance Test Suite 1-2,text,true,,338,325,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,99,0,0
+1731437388476,101,activities POST,200,OK,Endurance Test Suite 1-1,text,true,,339,326,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,101,0,0
+1731437388575,40,activities PUT ,200,OK,Endurance Test Suite 1-2,text,true,,338,326,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,40,0,0
+1731437388580,42,activities PUT ,200,OK,Endurance Test Suite 1-1,text,true,,339,327,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/1,42,0,0
+1731437388615,40,activities DELETE ,200,OK,Endurance Test Suite 1-2,,true,,211,222,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,40,0,0
+1731437388622,41,activities DELETE ,200,OK,Endurance Test Suite 1-1,,true,,211,222,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,41,0,0
+1731437388655,41,authors GET,200,OK,Endurance Test Suite 1-2,text,true,,330,197,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,41,0,0
+1731437388663,41,authors GET,200,OK,Endurance Test Suite 1-1,text,true,,330,197,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,41,0,0
+1731437388697,81,authors all GET,200,OK,Endurance Test Suite 1-2,text,true,,63507,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,41,0,0
+1731437388704,86,authors all GET,200,OK,Endurance Test Suite 1-1,text,true,,63507,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,44,0,0
+1731437388783,37,authors PUT,200,OK,Endurance Test Suite 1-2,text,true,,315,299,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,37,0,0
+1731437388792,39,authors PUT,200,OK,Endurance Test Suite 1-1,text,true,,316,300,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/1,38,0,0
+1731437388831,272,books all GET,200,OK,Endurance Test Suite 1-1,text,true,,904032,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,82,0,0
+1731437388821,284,books all GET,200,OK,Endurance Test Suite 1-2,text,true,,923515,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,89,0,0
+1731437389105,82,books GET,200,OK,Endurance Test Suite 1-2,text,true,,4064,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,81,0,0
+1731437389108,80,books GET,200,OK,Endurance Test Suite 1-1,text,true,,4720,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,80,0,0
+1731437389189,42,coverPhotos all GET,200,OK,Endurance Test Suite 1-2,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,41,0,0
+1731437389191,46,coverPhotos all GET,200,OK,Endurance Test Suite 1-1,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,43,0,0
+1731437389235,38,coverPhotos GET,200,OK,Endurance Test Suite 1-2,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,38,0,0
+1731437389237,40,coverPhotos GET,200,OK,Endurance Test Suite 1-1,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,40,0,0
+1731437389274,41,users all GET,200,OK,Endurance Test Suite 1-2,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,41,0,0
+1731437389279,40,users all GET,200,OK,Endurance Test Suite 1-1,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,39,0,0
+1731437389318,170,activities all GET,200,OK,Endurance Test Suite 1-2,text,true,,3109,198,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,170,0,111
+1731437389321,168,activities all GET,200,OK,Endurance Test Suite 1-1,text,true,,3109,198,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,168,0,107
+1731437389489,41,activities GET,200,OK,Endurance Test Suite 1-1,text,true,,351,200,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,41,0,0
+1731437389491,45,activities GET,200,OK,Endurance Test Suite 1-2,text,true,,351,200,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,45,0,0
+1731437389531,38,activities POST,200,OK,Endurance Test Suite 1-1,text,true,,338,325,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437389537,40,activities POST,200,OK,Endurance Test Suite 1-2,text,true,,339,326,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,40,0,0
+1731437389571,38,activities PUT ,200,OK,Endurance Test Suite 1-1,text,true,,338,326,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,38,0,0
+1731437389579,37,activities PUT ,200,OK,Endurance Test Suite 1-2,text,true,,339,327,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/3,37,0,0
+1731437389611,39,activities DELETE ,200,OK,Endurance Test Suite 1-1,,true,,211,222,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,39,0,0
+1731437389617,38,activities DELETE ,200,OK,Endurance Test Suite 1-2,,true,,211,222,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,38,0,0
+1731437389651,39,authors GET,200,OK,Endurance Test Suite 1-1,text,true,,330,197,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,39,0,0
+1731437389655,39,authors GET,200,OK,Endurance Test Suite 1-2,text,true,,330,197,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,38,0,0
+1731437389691,82,authors all GET,200,OK,Endurance Test Suite 1-1,text,true,,47615,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,46,0,0
+1731437389694,80,authors all GET,200,OK,Endurance Test Suite 1-2,text,true,,47615,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,45,0,0
+1731437389775,39,authors PUT,200,OK,Endurance Test Suite 1-1,text,true,,319,303,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,39,0,0
+1731437389774,40,authors PUT,200,OK,Endurance Test Suite 1-2,text,true,,315,299,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/3,40,0,0
+1731437389815,122,books all GET,200,OK,Endurance Test Suite 1-1,text,true,,230200,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,48,0,0
+1731437389815,124,books all GET,200,OK,Endurance Test Suite 1-2,text,true,,266584,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,49,0,0
+1731437389938,42,books GET,200,OK,Endurance Test Suite 1-1,text,true,,741,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,42,0,0
+1731437389939,47,books GET,200,OK,Endurance Test Suite 1-2,text,true,,741,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,47,0,0
+1731437389980,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-1,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437389987,38,coverPhotos all GET,200,OK,Endurance Test Suite 1-2,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,38,0,0
+1731437390021,39,coverPhotos GET,200,OK,Endurance Test Suite 1-1,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,39,0,0
+1731437390026,39,coverPhotos GET,200,OK,Endurance Test Suite 1-2,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,39,0,0
+1731437390061,40,users all GET,200,OK,Endurance Test Suite 1-1,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,40,0,0
+1731437390065,38,users all GET,200,OK,Endurance Test Suite 1-2,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437390105,152,activities all GET,200,OK,Endurance Test Suite 1-1,text,true,,3109,198,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,152,0,116
+1731437390106,179,activities all GET,200,OK,Endurance Test Suite 1-2,text,true,,3109,198,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,179,0,123
+1731437390262,38,activities GET,200,OK,Endurance Test Suite 1-1,text,true,,351,201,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,38,0,0
+1731437390287,44,activities GET,200,OK,Endurance Test Suite 1-2,text,true,,351,200,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,44,0,0
+1731437390300,39,activities POST,200,OK,Endurance Test Suite 1-1,text,true,,339,326,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,39,0,0
+1731437390218,151,activities all GET,200,OK,Endurance Test Suite 1-3,text,true,,3109,198,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,151,0,105
+1731437390332,38,activities POST,200,OK,Endurance Test Suite 1-2,text,true,,339,326,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437390340,38,activities PUT ,200,OK,Endurance Test Suite 1-1,text,true,,339,327,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/5,38,0,0
+1731437390371,39,activities PUT ,200,OK,Endurance Test Suite 1-2,text,true,,339,327,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,39,0,0
+1731437390369,43,activities GET,200,OK,Endurance Test Suite 1-3,text,true,,351,200,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,43,0,0
+1731437390380,35,activities DELETE ,200,OK,Endurance Test Suite 1-1,,true,,211,223,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,35,0,0
+1731437390412,39,activities POST,200,OK,Endurance Test Suite 1-3,text,true,,339,326,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,39,0,0
+1731437390413,39,activities DELETE ,200,OK,Endurance Test Suite 1-2,,true,,211,222,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,39,0,0
+1731437390416,39,authors GET,200,OK,Endurance Test Suite 1-1,text,true,,333,198,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,39,0,0
+1731437390451,40,activities PUT ,200,OK,Endurance Test Suite 1-3,text,true,,339,327,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/7,38,0,0
+1731437390452,40,authors GET,200,OK,Endurance Test Suite 1-2,text,true,,330,197,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,40,0,0
+1731437390455,71,authors all GET,200,OK,Endurance Test Suite 1-1,text,true,,31723,195,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437390492,39,activities DELETE ,200,OK,Endurance Test Suite 1-3,,true,,211,222,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,39,0,0
+1731437390526,38,authors PUT,200,OK,Endurance Test Suite 1-1,text,true,,315,299,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/5,38,0,0
+1731437390532,36,authors GET,200,OK,Endurance Test Suite 1-3,text,true,,330,197,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,36,0,0
+1731437390494,78,authors all GET,200,OK,Endurance Test Suite 1-2,text,true,,63507,195,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,41,0,0
+1731437390574,41,authors PUT,200,OK,Endurance Test Suite 1-2,text,true,,319,303,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,41,0,0
+1731437390568,73,authors all GET,200,OK,Endurance Test Suite 1-3,text,true,,47615,195,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,39,0,0
+1731437390564,78,books all GET,200,OK,Endurance Test Suite 1-1,text,true,,97339,193,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437390644,36,authors PUT,200,OK,Endurance Test Suite 1-3,text,true,,317,301,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/7,36,0,0
+1731437390643,42,books GET,200,OK,Endurance Test Suite 1-1,text,true,,744,196,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,42,0,0
+1731437390618,80,books all GET,200,OK,Endurance Test Suite 1-2,text,true,,97539,193,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,44,0,0
+1731437390685,37,coverPhotos all GET,200,OK,Endurance Test Suite 1-1,text,true,,20739,199,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437390698,43,books GET,200,OK,Endurance Test Suite 1-2,text,true,,741,195,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,43,0,0
+1731437390680,73,books all GET,200,OK,Endurance Test Suite 1-3,text,true,,97539,193,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437390722,46,coverPhotos GET,200,OK,Endurance Test Suite 1-1,text,true,,360,202,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,46,0,0
+1731437390754,39,books GET,200,OK,Endurance Test Suite 1-3,text,true,,741,195,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,39,0,0
+1731437390769,36,users all GET,200,OK,Endurance Test Suite 1-1,text,true,,784,193,3,3,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437390741,78,coverPhotos all GET,200,OK,Endurance Test Suite 1-2,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,77,0,0
+1731437390794,37,coverPhotos all GET,200,OK,Endurance Test Suite 1-3,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,36,0,0
+1731437390819,40,coverPhotos GET,200,OK,Endurance Test Suite 1-2,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,40,0,0
+1731437390833,36,coverPhotos GET,200,OK,Endurance Test Suite 1-3,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,36,0,0
+1731437390862,38,users all GET,200,OK,Endurance Test Suite 1-2,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437390869,35,users all GET,200,OK,Endurance Test Suite 1-3,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,35,0,0
+1731437390908,139,activities all GET,200,OK,Endurance Test Suite 1-3,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,139,0,86
+1731437391047,37,activities GET,200,OK,Endurance Test Suite 1-3,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,37,0,0
+1731437391086,35,activities POST,200,OK,Endurance Test Suite 1-3,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,35,0,0
+1731437391124,36,activities PUT ,200,OK,Endurance Test Suite 1-3,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,36,0,0
+1731437391161,38,activities DELETE ,200,OK,Endurance Test Suite 1-3,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,38,0,0
+1731437391199,37,authors GET,200,OK,Endurance Test Suite 1-3,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,37,0,0
+1731437391236,71,authors all GET,200,OK,Endurance Test Suite 1-3,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437391308,37,authors PUT,200,OK,Endurance Test Suite 1-3,text,true,,316,300,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,37,0,0
+1731437391345,74,books all GET,200,OK,Endurance Test Suite 1-3,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437391420,40,books GET,200,OK,Endurance Test Suite 1-3,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,40,0,0
+1731437391461,38,coverPhotos all GET,200,OK,Endurance Test Suite 1-3,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,38,0,0
+1731437391501,36,coverPhotos GET,200,OK,Endurance Test Suite 1-3,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,36,0,0
+1731437391539,35,users all GET,200,OK,Endurance Test Suite 1-3,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,35,0,0
+1731437391575,122,activities all GET,200,OK,Endurance Test Suite 1-3,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,122,0,86
+1731437391697,39,activities GET,200,OK,Endurance Test Suite 1-3,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,38,0,0
+1731437391736,36,activities POST,200,OK,Endurance Test Suite 1-3,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437391773,36,activities PUT ,200,OK,Endurance Test Suite 1-3,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/9,36,0,0
+1731437391810,35,activities DELETE ,200,OK,Endurance Test Suite 1-3,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,35,0,0
+1731437391846,37,authors GET,200,OK,Endurance Test Suite 1-3,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,36,0,0
+1731437391883,72,authors all GET,200,OK,Endurance Test Suite 1-3,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437391956,36,authors PUT,200,OK,Endurance Test Suite 1-3,text,true,,314,298,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/9,36,0,0
+1731437391994,72,books all GET,200,OK,Endurance Test Suite 1-3,text,true,,97403,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437392066,41,books GET,200,OK,Endurance Test Suite 1-3,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,40,0,0
+1731437392107,38,coverPhotos all GET,200,OK,Endurance Test Suite 1-3,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,38,0,0
+1731437392145,36,coverPhotos GET,200,OK,Endurance Test Suite 1-3,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,36,0,0
+1731437392182,35,users all GET,200,OK,Endurance Test Suite 1-3,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,35,0,0
+1731437392205,144,activities all GET,200,OK,Endurance Test Suite 1-4,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,144,0,91
+1731437392350,37,activities GET,200,OK,Endurance Test Suite 1-4,text,true,,353,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,36,0,0
+1731437392387,37,activities POST,200,OK,Endurance Test Suite 1-4,text,true,,341,328,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,37,0,0
+1731437392424,37,activities PUT ,200,OK,Endurance Test Suite 1-4,text,true,,341,330,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,37,0,0
+1731437392461,38,activities DELETE ,200,OK,Endurance Test Suite 1-4,,true,,211,223,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,38,0,0
+1731437392499,37,authors GET,200,OK,Endurance Test Suite 1-4,text,true,,333,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,37,0,0
+1731437392537,70,authors all GET,200,OK,Endurance Test Suite 1-4,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437392607,37,authors PUT,200,OK,Endurance Test Suite 1-4,text,true,,316,301,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,37,0,0
+1731437392645,74,books all GET,200,OK,Endurance Test Suite 1-4,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437392719,39,books GET,200,OK,Endurance Test Suite 1-4,text,true,,743,196,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,39,0,0
+1731437392760,41,coverPhotos all GET,200,OK,Endurance Test Suite 1-4,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,40,0,0
+1731437392801,37,coverPhotos GET,200,OK,Endurance Test Suite 1-4,text,true,,360,202,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,37,0,0
+1731437392838,36,users all GET,200,OK,Endurance Test Suite 1-4,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437392876,128,activities all GET,200,OK,Endurance Test Suite 1-4,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,128,0,92
+1731437393004,39,activities GET,200,OK,Endurance Test Suite 1-4,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,39,0,0
+1731437393043,37,activities POST,200,OK,Endurance Test Suite 1-4,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,37,0,0
+1731437393080,38,activities PUT ,200,OK,Endurance Test Suite 1-4,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/1,38,0,0
+1731437393118,37,activities DELETE ,200,OK,Endurance Test Suite 1-4,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,37,0,0
+1731437393155,37,authors GET,200,OK,Endurance Test Suite 1-4,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,37,0,0
+1731437393192,71,authors all GET,200,OK,Endurance Test Suite 1-4,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437393263,36,authors PUT,200,OK,Endurance Test Suite 1-4,text,true,,316,300,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/1,36,0,0
+1731437393299,73,books all GET,200,OK,Endurance Test Suite 1-4,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437393372,39,books GET,200,OK,Endurance Test Suite 1-4,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,39,0,0
+1731437393411,36,coverPhotos all GET,200,OK,Endurance Test Suite 1-4,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,36,0,0
+1731437393448,38,coverPhotos GET,200,OK,Endurance Test Suite 1-4,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,38,0,0
+1731437393486,36,users all GET,200,OK,Endurance Test Suite 1-4,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437393523,133,activities all GET,200,OK,Endurance Test Suite 1-4,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,133,0,95
+1731437393656,39,activities GET,200,OK,Endurance Test Suite 1-4,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,39,0,0
+1731437393696,39,activities POST,200,OK,Endurance Test Suite 1-4,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,39,0,0
+1731437393735,39,activities PUT ,200,OK,Endurance Test Suite 1-4,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,39,0,0
+1731437393776,38,activities DELETE ,200,OK,Endurance Test Suite 1-4,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,38,0,0
+1731437393815,39,authors GET,200,OK,Endurance Test Suite 1-4,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,39,0,0
+1731437393854,78,authors all GET,200,OK,Endurance Test Suite 1-4,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,43,0,0
+1731437393933,42,authors PUT,200,OK,Endurance Test Suite 1-4,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,42,0,0
+1731437393975,78,books all GET,200,OK,Endurance Test Suite 1-4,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,44,0,0
+1731437394054,41,books GET,200,OK,Endurance Test Suite 1-4,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,41,0,0
+1731437394095,41,coverPhotos all GET,200,OK,Endurance Test Suite 1-4,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437394136,40,coverPhotos GET,200,OK,Endurance Test Suite 1-4,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,40,0,0
+1731437394176,50,users all GET,200,OK,Endurance Test Suite 1-4,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,50,0,0
+1731437394192,145,activities all GET,200,OK,Endurance Test Suite 1-5,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,145,0,98
+1731437394339,42,activities GET,200,OK,Endurance Test Suite 1-5,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,42,0,0
+1731437394381,41,activities POST,200,OK,Endurance Test Suite 1-5,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,41,0,0
+1731437394422,41,activities PUT ,200,OK,Endurance Test Suite 1-5,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/3,41,0,0
+1731437394464,41,activities DELETE ,200,OK,Endurance Test Suite 1-5,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,41,0,0
+1731437394505,57,authors GET,200,OK,Endurance Test Suite 1-5,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,57,0,0
+1731437394563,81,authors all GET,200,OK,Endurance Test Suite 1-5,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,43,0,0
+1731437394644,42,authors PUT,200,OK,Endurance Test Suite 1-5,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/3,42,0,0
+1731437394687,83,books all GET,200,OK,Endurance Test Suite 1-5,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,47,0,0
+1731437394772,44,books GET,200,OK,Endurance Test Suite 1-5,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,44,0,0
+1731437394816,58,coverPhotos all GET,200,OK,Endurance Test Suite 1-5,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,58,0,0
+1731437394874,43,coverPhotos GET,200,OK,Endurance Test Suite 1-5,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,43,0,0
+1731437394917,53,users all GET,200,OK,Endurance Test Suite 1-5,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,53,0,0
+1731437394971,124,activities all GET,200,OK,Endurance Test Suite 1-5,text,true,,3079,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,124,0,79
+1731437395095,36,activities GET,200,OK,Endurance Test Suite 1-5,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,36,0,0
+1731437395131,36,activities POST,200,OK,Endurance Test Suite 1-5,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437395167,37,activities PUT ,200,OK,Endurance Test Suite 1-5,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,37,0,0
+1731437395204,36,activities DELETE ,200,OK,Endurance Test Suite 1-5,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,36,0,0
+1731437395240,37,authors GET,200,OK,Endurance Test Suite 1-5,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,37,0,0
+1731437395277,70,authors all GET,200,OK,Endurance Test Suite 1-5,text,true,,54735,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437395347,36,authors PUT,200,OK,Endurance Test Suite 1-5,text,true,,319,303,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,36,0,0
+1731437395383,74,books all GET,200,OK,Endurance Test Suite 1-5,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437395457,40,books GET,200,OK,Endurance Test Suite 1-5,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,40,0,0
+1731437395497,40,coverPhotos all GET,200,OK,Endurance Test Suite 1-5,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,40,0,0
+1731437395537,36,coverPhotos GET,200,OK,Endurance Test Suite 1-5,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,36,0,0
+1731437395573,36,users all GET,200,OK,Endurance Test Suite 1-5,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437395610,128,activities all GET,200,OK,Endurance Test Suite 1-5,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,128,0,83
+1731437395740,35,activities GET,200,OK,Endurance Test Suite 1-5,text,true,,353,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,35,0,0
+1731437395776,37,activities POST,200,OK,Endurance Test Suite 1-5,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437395813,36,activities PUT ,200,OK,Endurance Test Suite 1-5,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/5,36,0,0
+1731437395849,35,activities DELETE ,200,OK,Endurance Test Suite 1-5,,true,,211,223,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,35,0,0
+1731437395886,42,authors GET,200,OK,Endurance Test Suite 1-5,text,true,,333,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,42,0,0
+1731437395928,69,authors all GET,200,OK,Endurance Test Suite 1-5,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437395998,35,authors PUT,200,OK,Endurance Test Suite 1-5,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/5,35,0,0
+1731437396034,72,books all GET,200,OK,Endurance Test Suite 1-5,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,39,0,0
+1731437396107,40,books GET,200,OK,Endurance Test Suite 1-5,text,true,,744,196,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,40,0,0
+1731437396147,36,coverPhotos all GET,200,OK,Endurance Test Suite 1-5,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,36,0,0
+1731437396184,35,coverPhotos GET,200,OK,Endurance Test Suite 1-5,text,true,,360,202,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,35,0,0
+1731437396220,35,users all GET,200,OK,Endurance Test Suite 1-5,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,35,0,0
+1731437396188,126,activities all GET,200,OK,Endurance Test Suite 1-6,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,126,0,88
+1731437396315,36,activities GET,200,OK,Endurance Test Suite 1-6,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,36,0,0
+1731437396351,39,activities POST,200,OK,Endurance Test Suite 1-6,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437396390,36,activities PUT ,200,OK,Endurance Test Suite 1-6,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,36,0,0
+1731437396426,38,activities DELETE ,200,OK,Endurance Test Suite 1-6,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,38,0,0
+1731437396464,37,authors GET,200,OK,Endurance Test Suite 1-6,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,37,0,0
+1731437396501,71,authors all GET,200,OK,Endurance Test Suite 1-6,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437396572,37,authors PUT,200,OK,Endurance Test Suite 1-6,text,true,,319,303,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,37,0,0
+1731437396609,77,books all GET,200,OK,Endurance Test Suite 1-6,text,true,,97339,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437396686,39,books GET,200,OK,Endurance Test Suite 1-6,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,39,0,0
+1731437396726,37,coverPhotos all GET,200,OK,Endurance Test Suite 1-6,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437396763,38,coverPhotos GET,200,OK,Endurance Test Suite 1-6,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,38,0,0
+1731437396802,37,users all GET,200,OK,Endurance Test Suite 1-6,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,37,0,0
+1731437396843,128,activities all GET,200,OK,Endurance Test Suite 1-6,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,128,0,90
+1731437396971,39,activities GET,200,OK,Endurance Test Suite 1-6,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,39,0,0
+1731437397010,38,activities POST,200,OK,Endurance Test Suite 1-6,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437397049,38,activities PUT ,200,OK,Endurance Test Suite 1-6,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/7,38,0,0
+1731437397088,38,activities DELETE ,200,OK,Endurance Test Suite 1-6,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,38,0,0
+1731437397127,38,authors GET,200,OK,Endurance Test Suite 1-6,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,38,0,0
+1731437397166,105,authors all GET,200,OK,Endurance Test Suite 1-6,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,70,0,0
+1731437397271,39,authors PUT,200,OK,Endurance Test Suite 1-6,text,true,,317,301,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/7,39,0,0
+1731437397310,99,books all GET,200,OK,Endurance Test Suite 1-6,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,55,0,0
+1731437397409,43,books GET,200,OK,Endurance Test Suite 1-6,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,41,0,0
+1731437397452,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-6,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437397491,39,coverPhotos GET,200,OK,Endurance Test Suite 1-6,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,39,0,0
+1731437397530,38,users all GET,200,OK,Endurance Test Suite 1-6,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437397570,139,activities all GET,200,OK,Endurance Test Suite 1-6,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,139,0,101
+1731437397710,38,activities GET,200,OK,Endurance Test Suite 1-6,text,true,,350,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,38,0,0
+1731437397748,39,activities POST,200,OK,Endurance Test Suite 1-6,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,39,0,0
+1731437397787,40,activities PUT ,200,OK,Endurance Test Suite 1-6,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,40,0,0
+1731437397827,38,activities DELETE ,200,OK,Endurance Test Suite 1-6,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,38,0,0
+1731437397865,39,authors GET,200,OK,Endurance Test Suite 1-6,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,39,0,0
+1731437397904,82,authors all GET,200,OK,Endurance Test Suite 1-6,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,47,0,0
+1731437397986,39,authors PUT,200,OK,Endurance Test Suite 1-6,text,true,,316,300,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,39,0,0
+1731437398025,78,books all GET,200,OK,Endurance Test Suite 1-6,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,43,0,0
+1731437398105,41,books GET,200,OK,Endurance Test Suite 1-6,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,41,0,0
+1731437398146,51,coverPhotos all GET,200,OK,Endurance Test Suite 1-6,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,51,0,0
+1731437398197,39,coverPhotos GET,200,OK,Endurance Test Suite 1-6,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,39,0,0
+1731437398238,38,users all GET,200,OK,Endurance Test Suite 1-6,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437398187,147,activities all GET,200,OK,Endurance Test Suite 1-7,text,true,,3079,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,147,0,87
+1731437398334,36,activities GET,200,OK,Endurance Test Suite 1-7,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,36,0,0
+1731437398371,37,activities POST,200,OK,Endurance Test Suite 1-7,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,37,0,0
+1731437398410,88,activities PUT ,200,OK,Endurance Test Suite 1-7,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/9,88,0,0
+1731437398500,39,activities DELETE ,200,OK,Endurance Test Suite 1-7,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,39,0,0
+1731437398540,36,authors GET,200,OK,Endurance Test Suite 1-7,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,36,0,0
+1731437398578,88,authors all GET,200,OK,Endurance Test Suite 1-7,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,55,0,0
+1731437398667,36,authors PUT,200,OK,Endurance Test Suite 1-7,text,true,,314,298,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/9,36,0,0
+1731437398703,74,books all GET,200,OK,Endurance Test Suite 1-7,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437398777,40,books GET,200,OK,Endurance Test Suite 1-7,text,true,,740,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,40,0,0
+1731437398817,37,coverPhotos all GET,200,OK,Endurance Test Suite 1-7,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437398855,41,coverPhotos GET,200,OK,Endurance Test Suite 1-7,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,41,0,0
+1731437398896,36,users all GET,200,OK,Endurance Test Suite 1-7,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437398933,156,activities all GET,200,OK,Endurance Test Suite 1-7,text,true,,3049,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,156,0,103
+1731437399089,42,activities GET,200,OK,Endurance Test Suite 1-7,text,true,,353,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,42,0,0
+1731437399131,42,activities POST,200,OK,Endurance Test Suite 1-7,text,true,,341,328,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,42,0,0
+1731437399173,41,activities PUT ,200,OK,Endurance Test Suite 1-7,text,true,,341,330,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,41,0,0
+1731437399214,45,activities DELETE ,200,OK,Endurance Test Suite 1-7,,true,,211,223,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,45,0,0
+1731437399259,42,authors GET,200,OK,Endurance Test Suite 1-7,text,true,,333,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,42,0,0
+1731437399302,82,authors all GET,200,OK,Endurance Test Suite 1-7,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,43,0,0
+1731437399384,49,authors PUT,200,OK,Endurance Test Suite 1-7,text,true,,316,301,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,49,0,0
+1731437399435,87,books all GET,200,OK,Endurance Test Suite 1-7,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,48,0,0
+1731437399523,44,books GET,200,OK,Endurance Test Suite 1-7,text,true,,744,196,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,44,0,0
+1731437399567,42,coverPhotos all GET,200,OK,Endurance Test Suite 1-7,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,42,0,0
+1731437399610,43,coverPhotos GET,200,OK,Endurance Test Suite 1-7,text,true,,360,202,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,43,0,0
+1731437399653,41,users all GET,200,OK,Endurance Test Suite 1-7,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,41,0,0
+1731437399696,127,activities all GET,200,OK,Endurance Test Suite 1-7,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,127,0,82
+1731437399823,37,activities GET,200,OK,Endurance Test Suite 1-7,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,37,0,0
+1731437399860,37,activities POST,200,OK,Endurance Test Suite 1-7,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,37,0,0
+1731437399897,36,activities PUT ,200,OK,Endurance Test Suite 1-7,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/1,36,0,0
+1731437399933,36,activities DELETE ,200,OK,Endurance Test Suite 1-7,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,36,0,0
+1731437399969,36,authors GET,200,OK,Endurance Test Suite 1-7,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,36,0,0
+1731437400007,70,authors all GET,200,OK,Endurance Test Suite 1-7,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437400077,38,authors PUT,200,OK,Endurance Test Suite 1-7,text,true,,316,300,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/1,38,0,0
+1731437400115,73,books all GET,200,OK,Endurance Test Suite 1-7,text,true,,97539,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437400188,39,books GET,200,OK,Endurance Test Suite 1-7,text,true,,741,195,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,39,0,0
+1731437400227,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-7,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437400267,35,coverPhotos GET,200,OK,Endurance Test Suite 1-7,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,35,0,0
+1731437400178,132,activities all GET,200,OK,Endurance Test Suite 1-8,text,true,,3109,198,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,132,0,88
+1731437400310,35,activities GET,200,OK,Endurance Test Suite 1-8,text,true,,351,200,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,35,0,0
+1731437400302,48,users all GET,200,OK,Endurance Test Suite 1-7,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,48,0,0
+1731437400346,37,activities POST,200,OK,Endurance Test Suite 1-8,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,37,0,0
+1731437400383,37,activities PUT ,200,OK,Endurance Test Suite 1-8,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,37,0,0
+1731437400421,35,activities DELETE ,200,OK,Endurance Test Suite 1-8,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,35,0,0
+1731437400456,36,authors GET,200,OK,Endurance Test Suite 1-8,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,36,0,0
+1731437400492,70,authors all GET,200,OK,Endurance Test Suite 1-8,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437400562,35,authors PUT,200,OK,Endurance Test Suite 1-8,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,35,0,0
+1731437400598,72,books all GET,200,OK,Endurance Test Suite 1-8,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437400670,38,books GET,200,OK,Endurance Test Suite 1-8,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,38,0,0
+1731437400708,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-8,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437400749,36,coverPhotos GET,200,OK,Endurance Test Suite 1-8,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,36,0,0
+1731437400785,36,users all GET,200,OK,Endurance Test Suite 1-8,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437400821,128,activities all GET,200,OK,Endurance Test Suite 1-8,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,128,0,81
+1731437400949,36,activities GET,200,OK,Endurance Test Suite 1-8,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,36,0,0
+1731437400986,46,activities POST,200,OK,Endurance Test Suite 1-8,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,46,0,0
+1731437401033,36,activities PUT ,200,OK,Endurance Test Suite 1-8,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/3,36,0,0
+1731437401070,36,activities DELETE ,200,OK,Endurance Test Suite 1-8,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,36,0,0
+1731437401107,37,authors GET,200,OK,Endurance Test Suite 1-8,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,37,0,0
+1731437401144,73,authors all GET,200,OK,Endurance Test Suite 1-8,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,39,0,0
+1731437401219,36,authors PUT,200,OK,Endurance Test Suite 1-8,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/3,36,0,0
+1731437401256,74,books all GET,200,OK,Endurance Test Suite 1-8,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437401331,44,books GET,200,OK,Endurance Test Suite 1-8,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,43,0,0
+1731437401375,37,coverPhotos all GET,200,OK,Endurance Test Suite 1-8,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437401412,37,coverPhotos GET,200,OK,Endurance Test Suite 1-8,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,37,0,0
+1731437401449,36,users all GET,200,OK,Endurance Test Suite 1-8,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437401486,152,activities all GET,200,OK,Endurance Test Suite 1-8,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,152,0,85
+1731437401638,39,activities GET,200,OK,Endurance Test Suite 1-8,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,39,0,0
+1731437401677,38,activities POST,200,OK,Endurance Test Suite 1-8,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437401716,47,activities PUT ,200,OK,Endurance Test Suite 1-8,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,47,0,0
+1731437401763,50,activities DELETE ,200,OK,Endurance Test Suite 1-8,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,50,0,0
+1731437401814,39,authors GET,200,OK,Endurance Test Suite 1-8,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,39,0,0
+1731437401854,76,authors all GET,200,OK,Endurance Test Suite 1-8,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,40,0,0
+1731437401930,39,authors PUT,200,OK,Endurance Test Suite 1-8,text,true,,319,303,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,39,0,0
+1731437401969,78,books all GET,200,OK,Endurance Test Suite 1-8,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,42,0,0
+1731437402048,73,books GET,200,OK,Endurance Test Suite 1-8,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,72,0,0
+1731437402121,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-8,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437402160,40,coverPhotos GET,200,OK,Endurance Test Suite 1-8,text,true,,356,201,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,40,0,0
+1731437402202,39,users all GET,200,OK,Endurance Test Suite 1-8,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437402167,125,activities all GET,200,OK,Endurance Test Suite 1-9,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,125,0,86
+1731437402292,39,activities GET,200,OK,Endurance Test Suite 1-9,text,true,,353,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,39,0,0
+1731437402331,39,activities POST,200,OK,Endurance Test Suite 1-9,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,39,0,0
+1731437402370,38,activities PUT ,200,OK,Endurance Test Suite 1-9,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/5,38,0,0
+1731437402409,38,activities DELETE ,200,OK,Endurance Test Suite 1-9,,true,,211,223,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,38,0,0
+1731437402448,39,authors GET,200,OK,Endurance Test Suite 1-9,text,true,,333,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,39,0,0
+1731437402490,84,authors all GET,200,OK,Endurance Test Suite 1-9,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,40,0,0
+1731437402575,39,authors PUT,200,OK,Endurance Test Suite 1-9,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/5,39,0,0
+1731437402615,78,books all GET,200,OK,Endurance Test Suite 1-9,text,true,,97339,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,43,0,0
+1731437402694,41,books GET,200,OK,Endurance Test Suite 1-9,text,true,,744,196,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,41,0,0
+1731437402735,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-9,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437402775,38,coverPhotos GET,200,OK,Endurance Test Suite 1-9,text,true,,360,202,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,38,0,0
+1731437402814,38,users all GET,200,OK,Endurance Test Suite 1-9,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437402853,143,activities all GET,200,OK,Endurance Test Suite 1-9,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,143,0,83
+1731437402996,37,activities GET,200,OK,Endurance Test Suite 1-9,text,true,,350,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,36,0,0
+1731437403033,36,activities POST,200,OK,Endurance Test Suite 1-9,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437403069,42,activities PUT ,200,OK,Endurance Test Suite 1-9,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,42,0,0
+1731437403112,35,activities DELETE ,200,OK,Endurance Test Suite 1-9,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,35,0,0
+1731437403148,35,authors GET,200,OK,Endurance Test Suite 1-9,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,35,0,0
+1731437403184,69,authors all GET,200,OK,Endurance Test Suite 1-9,text,true,,35813,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,36,0,0
+1731437403255,35,authors PUT,200,OK,Endurance Test Suite 1-9,text,true,,319,303,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,35,0,0
+1731437403292,73,books all GET,200,OK,Endurance Test Suite 1-9,text,true,,97470,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437403367,38,books GET,200,OK,Endurance Test Suite 1-9,text,true,,740,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,38,0,0
+1731437403405,38,coverPhotos all GET,200,OK,Endurance Test Suite 1-9,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437403443,36,coverPhotos GET,200,OK,Endurance Test Suite 1-9,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,36,0,0
+1731437403479,36,users all GET,200,OK,Endurance Test Suite 1-9,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437403516,122,activities all GET,200,OK,Endurance Test Suite 1-9,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,122,0,83
+1731437403638,47,activities GET,200,OK,Endurance Test Suite 1-9,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,47,0,0
+1731437403686,38,activities POST,200,OK,Endurance Test Suite 1-9,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437403724,39,activities PUT ,200,OK,Endurance Test Suite 1-9,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/7,39,0,0
+1731437403765,39,activities DELETE ,200,OK,Endurance Test Suite 1-9,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,39,0,0
+1731437403804,38,authors GET,200,OK,Endurance Test Suite 1-9,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,38,0,0
+1731437403843,76,authors all GET,200,OK,Endurance Test Suite 1-9,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,40,0,0
+1731437403919,40,authors PUT,200,OK,Endurance Test Suite 1-9,text,true,,317,301,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/7,40,0,0
+1731437403959,79,books all GET,200,OK,Endurance Test Suite 1-9,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,43,0,0
+1731437404038,44,books GET,200,OK,Endurance Test Suite 1-9,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,44,0,0
+1731437404082,45,coverPhotos all GET,200,OK,Endurance Test Suite 1-9,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,45,0,0
+1731437404128,38,coverPhotos GET,200,OK,Endurance Test Suite 1-9,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,38,0,0
+1731437404167,38,users all GET,200,OK,Endurance Test Suite 1-9,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437404173,134,activities all GET,200,OK,Endurance Test Suite 1-10,text,true,,3079,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,134,0,91
+1731437404307,43,activities GET,200,OK,Endurance Test Suite 1-10,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,43,0,0
+1731437404350,42,activities POST,200,OK,Endurance Test Suite 1-10,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,42,0,0
+1731437404392,44,activities PUT ,200,OK,Endurance Test Suite 1-10,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,44,0,0
+1731437404436,43,activities DELETE ,200,OK,Endurance Test Suite 1-10,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,43,0,0
+1731437404479,43,authors GET,200,OK,Endurance Test Suite 1-10,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,43,0,0
+1731437404522,81,authors all GET,200,OK,Endurance Test Suite 1-10,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,43,0,0
+1731437404604,42,authors PUT,200,OK,Endurance Test Suite 1-10,text,true,,316,300,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,42,0,0
+1731437404646,83,books all GET,200,OK,Endurance Test Suite 1-10,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,45,0,0
+1731437404730,44,books GET,200,OK,Endurance Test Suite 1-10,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,44,0,0
+1731437404774,43,coverPhotos all GET,200,OK,Endurance Test Suite 1-10,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,42,0,0
+1731437404817,42,coverPhotos GET,200,OK,Endurance Test Suite 1-10,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,42,0,0
+1731437404859,52,users all GET,200,OK,Endurance Test Suite 1-10,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,52,0,0
+1731437404913,131,activities all GET,200,OK,Endurance Test Suite 1-10,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,131,0,89
+1731437405045,38,activities GET,200,OK,Endurance Test Suite 1-10,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,38,0,0
+1731437405083,38,activities POST,200,OK,Endurance Test Suite 1-10,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437405122,42,activities PUT ,200,OK,Endurance Test Suite 1-10,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/9,41,0,0
+1731437405164,38,activities DELETE ,200,OK,Endurance Test Suite 1-10,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,38,0,0
+1731437405202,39,authors GET,200,OK,Endurance Test Suite 1-10,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,39,0,0
+1731437405242,75,authors all GET,200,OK,Endurance Test Suite 1-10,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,40,0,0
+1731437405317,38,authors PUT,200,OK,Endurance Test Suite 1-10,text,true,,314,298,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/9,38,0,0
+1731437405355,87,books all GET,200,OK,Endurance Test Suite 1-10,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,52,0,0
+1731437405442,42,books GET,200,OK,Endurance Test Suite 1-10,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,42,0,0
+1731437405484,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-10,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437405524,38,coverPhotos GET,200,OK,Endurance Test Suite 1-10,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,38,0,0
+1731437405562,38,users all GET,200,OK,Endurance Test Suite 1-10,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437405602,122,activities all GET,200,OK,Endurance Test Suite 1-10,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,122,0,84
+1731437405725,38,activities GET,200,OK,Endurance Test Suite 1-10,text,true,,353,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,38,0,0
+1731437405764,43,activities POST,200,OK,Endurance Test Suite 1-10,text,true,,341,328,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,43,0,0
+1731437405807,41,activities PUT ,200,OK,Endurance Test Suite 1-10,text,true,,341,330,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,41,0,0
+1731437405848,39,activities DELETE ,200,OK,Endurance Test Suite 1-10,,true,,211,223,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,39,0,0
+1731437405889,40,authors GET,200,OK,Endurance Test Suite 1-10,text,true,,333,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,39,0,0
+1731437405930,77,authors all GET,200,OK,Endurance Test Suite 1-10,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,42,0,0
+1731437406008,39,authors PUT,200,OK,Endurance Test Suite 1-10,text,true,,316,301,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,39,0,0
+1731437406047,78,books all GET,200,OK,Endurance Test Suite 1-10,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,42,0,0
+1731437406125,41,books GET,200,OK,Endurance Test Suite 1-10,text,true,,744,196,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,41,0,0
+1731437406166,42,coverPhotos all GET,200,OK,Endurance Test Suite 1-10,text,true,,20739,199,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,42,0,0
+1731437406210,39,coverPhotos GET,200,OK,Endurance Test Suite 1-10,text,true,,360,202,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,39,0,0
+1731437406170,115,activities all GET,200,OK,Endurance Test Suite 1-11,text,true,,3109,198,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,115,0,79
+1731437406249,38,users all GET,200,OK,Endurance Test Suite 1-10,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437406285,35,activities GET,200,OK,Endurance Test Suite 1-11,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,35,0,0
+1731437406321,39,activities POST,200,OK,Endurance Test Suite 1-11,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437406360,35,activities PUT ,200,OK,Endurance Test Suite 1-11,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/1,35,0,0
+1731437406396,36,activities DELETE ,200,OK,Endurance Test Suite 1-11,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,36,0,0
+1731437406433,36,authors GET,200,OK,Endurance Test Suite 1-11,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,36,0,0
+1731437406469,70,authors all GET,200,OK,Endurance Test Suite 1-11,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437406539,38,authors PUT,200,OK,Endurance Test Suite 1-11,text,true,,316,300,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/1,38,0,0
+1731437406577,73,books all GET,200,OK,Endurance Test Suite 1-11,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437406650,69,books GET,200,OK,Endurance Test Suite 1-11,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,69,0,0
+1731437406719,36,coverPhotos all GET,200,OK,Endurance Test Suite 1-11,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,36,0,0
+1731437406756,36,coverPhotos GET,200,OK,Endurance Test Suite 1-11,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,36,0,0
+1731437406792,53,users all GET,200,OK,Endurance Test Suite 1-11,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,53,0,0
+1731437406846,123,activities all GET,200,OK,Endurance Test Suite 1-11,text,true,,3079,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,123,0,85
+1731437406969,39,activities GET,200,OK,Endurance Test Suite 1-11,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,39,0,0
+1731437407008,38,activities POST,200,OK,Endurance Test Suite 1-11,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,38,0,0
+1731437407046,38,activities PUT ,200,OK,Endurance Test Suite 1-11,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,38,0,0
+1731437407084,44,activities DELETE ,200,OK,Endurance Test Suite 1-11,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,44,0,0
+1731437407129,48,authors GET,200,OK,Endurance Test Suite 1-11,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,48,0,0
+1731437407177,75,authors all GET,200,OK,Endurance Test Suite 1-11,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,40,0,0
+1731437407252,39,authors PUT,200,OK,Endurance Test Suite 1-11,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,39,0,0
+1731437407291,86,books all GET,200,OK,Endurance Test Suite 1-11,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,49,0,0
+1731437407377,43,books GET,200,OK,Endurance Test Suite 1-11,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,43,0,0
+1731437407420,44,coverPhotos all GET,200,OK,Endurance Test Suite 1-11,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,43,0,0
+1731437407464,38,coverPhotos GET,200,OK,Endurance Test Suite 1-11,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,38,0,0
+1731437407502,41,users all GET,200,OK,Endurance Test Suite 1-11,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,41,0,0
+1731437407543,119,activities all GET,200,OK,Endurance Test Suite 1-11,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,119,0,83
+1731437407662,37,activities GET,200,OK,Endurance Test Suite 1-11,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,37,0,0
+1731437407699,36,activities POST,200,OK,Endurance Test Suite 1-11,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437407735,37,activities PUT ,200,OK,Endurance Test Suite 1-11,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/3,37,0,0
+1731437407772,36,activities DELETE ,200,OK,Endurance Test Suite 1-11,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,36,0,0
+1731437407808,37,authors GET,200,OK,Endurance Test Suite 1-11,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,37,0,0
+1731437407845,71,authors all GET,200,OK,Endurance Test Suite 1-11,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437407916,37,authors PUT,200,OK,Endurance Test Suite 1-11,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/3,37,0,0
+1731437407955,75,books all GET,200,OK,Endurance Test Suite 1-11,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,42,0,0
+1731437408030,38,books GET,200,OK,Endurance Test Suite 1-11,text,true,,740,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,38,0,0
+1731437408069,43,coverPhotos all GET,200,OK,Endurance Test Suite 1-11,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,43,0,0
+1731437408112,36,coverPhotos GET,200,OK,Endurance Test Suite 1-11,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,36,0,0
+1731437408150,36,users all GET,200,OK,Endurance Test Suite 1-11,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437408156,116,activities all GET,200,OK,Endurance Test Suite 1-12,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,116,0,81
+1731437408272,35,activities GET,200,OK,Endurance Test Suite 1-12,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,35,0,0
+1731437408308,35,activities POST,200,OK,Endurance Test Suite 1-12,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,35,0,0
+1731437408343,36,activities PUT ,200,OK,Endurance Test Suite 1-12,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,36,0,0
+1731437408379,36,activities DELETE ,200,OK,Endurance Test Suite 1-12,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,36,0,0
+1731437408415,37,authors GET,200,OK,Endurance Test Suite 1-12,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,37,0,0
+1731437408452,70,authors all GET,200,OK,Endurance Test Suite 1-12,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437408523,35,authors PUT,200,OK,Endurance Test Suite 1-12,text,true,,319,303,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,35,0,0
+1731437408558,72,books all GET,200,OK,Endurance Test Suite 1-12,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437408630,38,books GET,200,OK,Endurance Test Suite 1-12,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,38,0,0
+1731437408668,37,coverPhotos all GET,200,OK,Endurance Test Suite 1-12,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437408706,36,coverPhotos GET,200,OK,Endurance Test Suite 1-12,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,36,0,0
+1731437408742,37,users all GET,200,OK,Endurance Test Suite 1-12,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,37,0,0
+1731437408781,115,activities all GET,200,OK,Endurance Test Suite 1-12,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,115,0,80
+1731437408898,35,activities GET,200,OK,Endurance Test Suite 1-12,text,true,,353,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,35,0,0
+1731437408933,36,activities POST,200,OK,Endurance Test Suite 1-12,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437408971,35,activities PUT ,200,OK,Endurance Test Suite 1-12,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/5,35,0,0
+1731437409006,35,activities DELETE ,200,OK,Endurance Test Suite 1-12,,true,,211,223,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,35,0,0
+1731437409042,37,authors GET,200,OK,Endurance Test Suite 1-12,text,true,,333,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,37,0,0
+1731437409080,69,authors all GET,200,OK,Endurance Test Suite 1-12,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,36,0,0
+1731437409149,36,authors PUT,200,OK,Endurance Test Suite 1-12,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/5,36,0,0
+1731437409185,74,books all GET,200,OK,Endurance Test Suite 1-12,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,42,0,0
+1731437409259,38,books GET,200,OK,Endurance Test Suite 1-12,text,true,,743,196,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,38,0,0
+1731437409298,35,coverPhotos all GET,200,OK,Endurance Test Suite 1-12,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,35,0,0
+1731437409334,45,coverPhotos GET,200,OK,Endurance Test Suite 1-12,text,true,,360,202,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,45,0,0
+1731437409380,48,users all GET,200,OK,Endurance Test Suite 1-12,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,48,0,0
+1731437409430,123,activities all GET,200,OK,Endurance Test Suite 1-12,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,123,0,84
+1731437409553,39,activities GET,200,OK,Endurance Test Suite 1-12,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,39,0,0
+1731437409594,39,activities POST,200,OK,Endurance Test Suite 1-12,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,39,0,0
+1731437409633,90,activities PUT ,200,OK,Endurance Test Suite 1-12,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,90,0,0
+1731437409723,39,activities DELETE ,200,OK,Endurance Test Suite 1-12,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,39,0,0
+1731437409762,40,authors GET,200,OK,Endurance Test Suite 1-12,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,40,0,0
+1731437409802,84,authors all GET,200,OK,Endurance Test Suite 1-12,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,48,0,0
+1731437409886,39,authors PUT,200,OK,Endurance Test Suite 1-12,text,true,,319,303,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,39,0,0
+1731437409925,82,books all GET,200,OK,Endurance Test Suite 1-12,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,46,0,0
+1731437410008,41,books GET,200,OK,Endurance Test Suite 1-12,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,41,0,0
+1731437410049,48,coverPhotos all GET,200,OK,Endurance Test Suite 1-12,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,48,0,0
+1731437410098,40,coverPhotos GET,200,OK,Endurance Test Suite 1-12,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,40,0,0
+1731437410141,38,users all GET,200,OK,Endurance Test Suite 1-12,text,true,,784,193,2,2,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437410157,111,activities all GET,200,OK,Endurance Test Suite 1-13,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,111,0,76
+1731437410269,35,activities GET,200,OK,Endurance Test Suite 1-13,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,35,0,0
+1731437410304,70,activities POST,200,OK,Endurance Test Suite 1-13,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,70,0,0
+1731437410374,35,activities PUT ,200,OK,Endurance Test Suite 1-13,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/7,35,0,0
+1731437410409,37,activities DELETE ,200,OK,Endurance Test Suite 1-13,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,37,0,0
+1731437410446,36,authors GET,200,OK,Endurance Test Suite 1-13,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,36,0,0
+1731437410482,69,authors all GET,200,OK,Endurance Test Suite 1-13,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437410552,36,authors PUT,200,OK,Endurance Test Suite 1-13,text,true,,317,301,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/7,36,0,0
+1731437410588,72,books all GET,200,OK,Endurance Test Suite 1-13,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437410661,37,books GET,200,OK,Endurance Test Suite 1-13,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,37,0,0
+1731437410699,36,coverPhotos all GET,200,OK,Endurance Test Suite 1-13,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,36,0,0
+1731437410735,36,coverPhotos GET,200,OK,Endurance Test Suite 1-13,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,36,0,0
+1731437410771,35,users all GET,200,OK,Endurance Test Suite 1-13,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,35,0,0
+1731437410807,117,activities all GET,200,OK,Endurance Test Suite 1-13,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,117,0,80
+1731437410924,36,activities GET,200,OK,Endurance Test Suite 1-13,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,36,0,0
+1731437410960,36,activities POST,200,OK,Endurance Test Suite 1-13,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437410997,40,activities PUT ,200,OK,Endurance Test Suite 1-13,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,40,0,0
+1731437411037,37,activities DELETE ,200,OK,Endurance Test Suite 1-13,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,37,0,0
+1731437411074,37,authors GET,200,OK,Endurance Test Suite 1-13,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,37,0,0
+1731437411111,73,authors all GET,200,OK,Endurance Test Suite 1-13,text,true,,63507,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437411184,37,authors PUT,200,OK,Endurance Test Suite 1-13,text,true,,316,300,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,37,0,0
+1731437411221,73,books all GET,200,OK,Endurance Test Suite 1-13,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437411294,41,books GET,200,OK,Endurance Test Suite 1-13,text,true,,740,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,41,0,0
+1731437411335,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-13,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437411374,36,coverPhotos GET,200,OK,Endurance Test Suite 1-13,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,36,0,0
+1731437411410,36,users all GET,200,OK,Endurance Test Suite 1-13,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437411448,118,activities all GET,200,OK,Endurance Test Suite 1-13,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,118,0,82
+1731437411566,36,activities GET,200,OK,Endurance Test Suite 1-13,text,true,,349,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,36,0,0
+1731437411602,36,activities POST,200,OK,Endurance Test Suite 1-13,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437411639,39,activities PUT ,200,OK,Endurance Test Suite 1-13,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/9,39,0,0
+1731437411678,35,activities DELETE ,200,OK,Endurance Test Suite 1-13,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,35,0,0
+1731437411714,36,authors GET,200,OK,Endurance Test Suite 1-13,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,36,0,0
+1731437411750,71,authors all GET,200,OK,Endurance Test Suite 1-13,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437411821,38,authors PUT,200,OK,Endurance Test Suite 1-13,text,true,,314,298,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/9,38,0,0
+1731437411859,74,books all GET,200,OK,Endurance Test Suite 1-13,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437411933,39,books GET,200,OK,Endurance Test Suite 1-13,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,39,0,0
+1731437411972,37,coverPhotos all GET,200,OK,Endurance Test Suite 1-13,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437412009,36,coverPhotos GET,200,OK,Endurance Test Suite 1-13,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,36,0,0
+1731437412045,36,users all GET,200,OK,Endurance Test Suite 1-13,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437412139,114,activities all GET,200,OK,Endurance Test Suite 1-14,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,114,0,78
+1731437412253,36,activities GET,200,OK,Endurance Test Suite 1-14,text,true,,353,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,36,0,0
+1731437412290,36,activities POST,200,OK,Endurance Test Suite 1-14,text,true,,341,328,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437412328,36,activities PUT ,200,OK,Endurance Test Suite 1-14,text,true,,341,330,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,36,0,0
+1731437412366,41,activities DELETE ,200,OK,Endurance Test Suite 1-14,,true,,211,223,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,41,0,0
+1731437412409,48,authors GET,200,OK,Endurance Test Suite 1-14,text,true,,333,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,48,0,0
+1731437412458,71,authors all GET,200,OK,Endurance Test Suite 1-14,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437412529,37,authors PUT,200,OK,Endurance Test Suite 1-14,text,true,,316,301,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,37,0,0
+1731437412567,73,books all GET,200,OK,Endurance Test Suite 1-14,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437412641,39,books GET,200,OK,Endurance Test Suite 1-14,text,true,,744,196,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,39,0,0
+1731437412680,38,coverPhotos all GET,200,OK,Endurance Test Suite 1-14,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,38,0,0
+1731437412718,36,coverPhotos GET,200,OK,Endurance Test Suite 1-14,text,true,,360,202,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,36,0,0
+1731437412755,38,users all GET,200,OK,Endurance Test Suite 1-14,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437412795,114,activities all GET,200,OK,Endurance Test Suite 1-14,text,true,,3079,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,114,0,76
+1731437412909,36,activities GET,200,OK,Endurance Test Suite 1-14,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,36,0,0
+1731437412945,37,activities POST,200,OK,Endurance Test Suite 1-14,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,37,0,0
+1731437412982,36,activities PUT ,200,OK,Endurance Test Suite 1-14,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/1,36,0,0
+1731437413018,41,activities DELETE ,200,OK,Endurance Test Suite 1-14,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,41,0,0
+1731437413059,37,authors GET,200,OK,Endurance Test Suite 1-14,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,37,0,0
+1731437413096,84,authors all GET,200,OK,Endurance Test Suite 1-14,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,37,0,0
+1731437413180,36,authors PUT,200,OK,Endurance Test Suite 1-14,text,true,,316,300,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/1,36,0,0
+1731437413216,74,books all GET,200,OK,Endurance Test Suite 1-14,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437413290,39,books GET,200,OK,Endurance Test Suite 1-14,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/2,39,0,0
+1731437413329,38,coverPhotos all GET,200,OK,Endurance Test Suite 1-14,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437413367,36,coverPhotos GET,200,OK,Endurance Test Suite 1-14,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/2,36,0,0
+1731437413403,36,users all GET,200,OK,Endurance Test Suite 1-14,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437413440,120,activities all GET,200,OK,Endurance Test Suite 1-14,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,120,0,82
+1731437413560,47,activities GET,200,OK,Endurance Test Suite 1-14,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,47,0,0
+1731437413609,39,activities POST,200,OK,Endurance Test Suite 1-14,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,39,0,0
+1731437413648,39,activities PUT ,200,OK,Endurance Test Suite 1-14,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/2,39,0,0
+1731437413687,39,activities DELETE ,200,OK,Endurance Test Suite 1-14,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,39,0,0
+1731437413726,39,authors GET,200,OK,Endurance Test Suite 1-14,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,39,0,0
+1731437413765,80,authors all GET,200,OK,Endurance Test Suite 1-14,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,44,0,0
+1731437413845,39,authors PUT,200,OK,Endurance Test Suite 1-14,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/2,39,0,0
+1731437413884,78,books all GET,200,OK,Endurance Test Suite 1-14,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,43,0,0
+1731437413962,41,books GET,200,OK,Endurance Test Suite 1-14,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/4,41,0,0
+1731437414003,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-14,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437414042,40,coverPhotos GET,200,OK,Endurance Test Suite 1-14,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/4,40,0,0
+1731437414082,38,users all GET,200,OK,Endurance Test Suite 1-14,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
+1731437414128,121,activities all GET,200,OK,Endurance Test Suite 1-15,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,121,0,84
+1731437414249,36,activities GET,200,OK,Endurance Test Suite 1-15,text,true,,350,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,36,0,0
+1731437414285,37,activities POST,200,OK,Endurance Test Suite 1-15,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,37,0,0
+1731437414322,38,activities PUT ,200,OK,Endurance Test Suite 1-15,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/3,38,0,0
+1731437414360,40,activities DELETE ,200,OK,Endurance Test Suite 1-15,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/6,40,0,0
+1731437414401,37,authors GET,200,OK,Endurance Test Suite 1-15,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/6,37,0,0
+1731437414438,73,authors all GET,200,OK,Endurance Test Suite 1-15,text,true,,47615,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,38,0,0
+1731437414512,36,authors PUT,200,OK,Endurance Test Suite 1-15,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/3,36,0,0
+1731437414549,76,books all GET,200,OK,Endurance Test Suite 1-15,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,40,0,0
+1731437414625,40,books GET,200,OK,Endurance Test Suite 1-15,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/6,40,0,0
+1731437414666,37,coverPhotos all GET,200,OK,Endurance Test Suite 1-15,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,37,0,0
+1731437414703,36,coverPhotos GET,200,OK,Endurance Test Suite 1-15,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/6,36,0,0
+1731437414741,36,users all GET,200,OK,Endurance Test Suite 1-15,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,36,0,0
+1731437414778,125,activities all GET,200,OK,Endurance Test Suite 1-15,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,125,0,79
+1731437414903,36,activities GET,200,OK,Endurance Test Suite 1-15,text,true,,351,200,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,36,0,0
+1731437414939,36,activities POST,200,OK,Endurance Test Suite 1-15,text,true,,338,325,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,36,0,0
+1731437414975,39,activities PUT ,200,OK,Endurance Test Suite 1-15,text,true,,338,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/4,39,0,0
+1731437415014,37,activities DELETE ,200,OK,Endurance Test Suite 1-15,,true,,211,222,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/8,37,0,0
+1731437415051,36,authors GET,200,OK,Endurance Test Suite 1-15,text,true,,330,197,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/8,36,0,0
+1731437415087,73,authors all GET,200,OK,Endurance Test Suite 1-15,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,40,0,0
+1731437415160,36,authors PUT,200,OK,Endurance Test Suite 1-15,text,true,,319,303,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/4,36,0,0
+1731437415196,89,books all GET,200,OK,Endurance Test Suite 1-15,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,57,0,0
+1731437415286,40,books GET,200,OK,Endurance Test Suite 1-15,text,true,,741,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/8,40,0,0
+1731437415326,44,coverPhotos all GET,200,OK,Endurance Test Suite 1-15,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,44,0,0
+1731437415371,36,coverPhotos GET,200,OK,Endurance Test Suite 1-15,text,true,,356,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/8,36,0,0
+1731437415407,35,users all GET,200,OK,Endurance Test Suite 1-15,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,35,0,0
+1731437415444,130,activities all GET,200,OK,Endurance Test Suite 1-15,text,true,,3109,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,130,0,83
+1731437415574,38,activities GET,200,OK,Endurance Test Suite 1-15,text,true,,352,201,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,38,0,0
+1731437415612,39,activities POST,200,OK,Endurance Test Suite 1-15,text,true,,339,326,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities,39,0,0
+1731437415653,45,activities PUT ,200,OK,Endurance Test Suite 1-15,text,true,,339,327,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/5,45,0,0
+1731437415699,38,activities DELETE ,200,OK,Endurance Test Suite 1-15,,true,,211,223,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Activities/10,38,0,0
+1731437415737,39,authors GET,200,OK,Endurance Test Suite 1-15,text,true,,333,198,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/10,39,0,0
+1731437415776,76,authors all GET,200,OK,Endurance Test Suite 1-15,text,true,,31723,195,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors,41,0,0
+1731437415852,38,authors PUT,200,OK,Endurance Test Suite 1-15,text,true,,315,299,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Authors/5,38,0,0
+1731437415891,77,books all GET,200,OK,Endurance Test Suite 1-15,text,true,,97539,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books,41,0,0
+1731437415968,41,books GET,200,OK,Endurance Test Suite 1-15,text,true,,744,196,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Books/10,41,0,0
+1731437416009,39,coverPhotos all GET,200,OK,Endurance Test Suite 1-15,text,true,,20739,199,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos,39,0,0
+1731437416048,39,coverPhotos GET,200,OK,Endurance Test Suite 1-15,text,true,,360,202,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/CoverPhotos/10,39,0,0
+1731437416087,38,users all GET,200,OK,Endurance Test Suite 1-15,text,true,,784,193,1,1,https://myapplication-quochuyappservice.azurewebsites.net/api/Users,38,0,0
