@@ -1,12 +1,12 @@
 # Azure subscription vars
-subscription_id = "c761712a-772e-4832-b4d5-73b3a4b12e0b"
-client_id = "aeb4b86e-4be2-4c19-9ed8-11d9624f0bac"
-client_secret = "bCz8Q~NNKpO_1nLKgpHFcD4DjvAdiG2awALxUcZC"
+subscription_id = "d06323f0-ffb0-484c-9e89-0ca5e1d58412"
+client_id = "6b75a1d4-5dac-41eb-893f-4aecdd8cfe91"
+client_secret = "mqd8Q~NRc_IAnWp_buusG0hxLJrLuP~H5_2r8dft"
 tenant_id = "f958e84a-92b8-439f-a62d-4f45996b6d07"
 
 
 # Resource Group/Location
-location = "West Europe"
+location = "East US"
 resource_group = "Azuredevops"
 application_type = "myApplication"
 
@@ -19,4 +19,4 @@ address_prefix_test = "10.5.1.0/24"
 vm_name = "myVirtualMachine"
 
 # VM
-packer_image= "/subscriptions/c761712a-772e-4832-b4d5-73b3a4b12e0b/resourceGroups/Azuredevops/providers/Microsoft.Compute/images/myPackerImage"
+packer_image= "/subscriptions/d06323f0-ffb0-484c-9e89-0ca5e1d58412/resourceGroups/Azuredevops/providers/Microsoft.Compute/images/myPackerImage"
