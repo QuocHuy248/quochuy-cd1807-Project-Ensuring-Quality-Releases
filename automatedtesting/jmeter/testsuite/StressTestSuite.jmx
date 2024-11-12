@@ -135,7 +135,7 @@
         <stringProp name="shareMode">shareMode.all</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stress Test Suite">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Stress Test Suite" enabled="true">
         <intProp name="ThreadGroup.num_threads">100</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
@@ -146,7 +146,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities all GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities all GET" enabled="true">
           <stringProp name="HTTPSampler.path">/api/Activities</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -157,7 +157,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets the activity with the specified identifier. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Activities/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -169,7 +169,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities POST">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities POST" enabled="true">
           <stringProp name="TestPlan.comments">Posts an activity. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Activities</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -192,7 +192,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities PUT ">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities PUT " enabled="true">
           <stringProp name="TestPlan.comments">Puts an activity. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Activities/${ActivityID}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -215,7 +215,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities DELETE ">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="activities DELETE " enabled="true">
           <stringProp name="TestPlan.comments">Deletes the specified activity. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Activities/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -227,7 +227,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets the specified author. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Authors/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -239,7 +239,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors all GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors all GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets all Authors. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Authors</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -251,7 +251,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors POST">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors POST" enabled="true">
           <stringProp name="TestPlan.comments">Posts an author. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Authors</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -279,7 +279,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors PUT">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors PUT" enabled="true">
           <stringProp name="TestPlan.comments">Puts an author. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Authors/${AuthorID}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -304,7 +304,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors DELETE">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="authors DELETE" enabled="true">
           <stringProp name="TestPlan.comments">Deletes the specified author. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Authors/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -316,7 +316,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books all GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books all GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets all books. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Books</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -328,7 +328,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets the specified book. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Books/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -340,7 +340,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books PUT">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books PUT" enabled="true">
           <stringProp name="TestPlan.comments">Puts the specified book. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Books/${BookID}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -369,7 +369,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books POST">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books POST" enabled="true">
           <stringProp name="TestPlan.comments">Posts the book. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Books</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -401,7 +401,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books DELETE">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="books DELETE" enabled="true">
           <stringProp name="TestPlan.comments">Deletes the specified book. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Books/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -413,7 +413,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos all GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos all GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets all cover photos. </stringProp>
           <stringProp name="HTTPSampler.path">/api/CoverPhotos</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -425,7 +425,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets the cover photos. </stringProp>
           <stringProp name="HTTPSampler.path">/api/CoverPhotos/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -437,7 +437,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos PUT">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos PUT" enabled="true">
           <stringProp name="TestPlan.comments">Puts the cover photo. </stringProp>
           <stringProp name="HTTPSampler.path">/api/CoverPhotos/${CoverPhotosID}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -460,7 +460,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos POST">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos POST" enabled="true">
           <stringProp name="TestPlan.comments">Posts the cover photo. </stringProp>
           <stringProp name="HTTPSampler.path">/api/CoverPhotos</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -485,7 +485,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos DELETE">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="coverPhotos DELETE" enabled="true">
           <stringProp name="TestPlan.comments">Deletes the specified cover photo. </stringProp>
           <stringProp name="HTTPSampler.path">/api/CoverPhotos/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -497,7 +497,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users all GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users all GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets all users. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Users</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -509,7 +509,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users GET">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users GET" enabled="true">
           <stringProp name="TestPlan.comments">Gets the user. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Users/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -521,7 +521,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users POST">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users POST" enabled="true">
           <stringProp name="TestPlan.comments">Posts the user. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Users</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -547,7 +547,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users PUT">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users PUT" enabled="true">
           <stringProp name="TestPlan.comments">Puts the user. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Users/${UserID}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -572,7 +572,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users DELETE">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="users DELETE" enabled="true">
           <stringProp name="TestPlan.comments">Deletes the specified user. </stringProp>
           <stringProp name="HTTPSampler.path">/api/Users/${id}</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -584,7 +584,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
